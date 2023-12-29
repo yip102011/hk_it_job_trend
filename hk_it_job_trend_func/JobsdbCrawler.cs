@@ -1,15 +1,196 @@
-using System;
+using GraphQL;
+using GraphQL.Client.Http;
+using GraphQL.Client.Serializer.SystemTextJson;
+
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
+
+using System;
+using System.Text.Json.Nodes;
+using System.Threading.Tasks;
 
 namespace hk_it_job_trend_func
 {
     public class JobsdbCrawler
     {
         [FunctionName("JobsdbCrawler")]
-        public void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger log)
+        public static async Task Run([TimerTrigger("0 */5 * * * *"
+                                                                                    #if DEBUG
+                                                                                    , RunOnStartup =true
+                                                                                    #endif
+            )] TimerInfo myTimer, ILogger log)
         {
+            using var graphQLClient = new GraphQLHttpClient("https://xapi.supercharge-srp.co/job-search/graphql?country=hk&isSmartSearch=true", new SystemTextJsonSerializer());
+
+            var request = new GraphQLRequest
+            {
+                Query = @"
+                            query getJobs($country: String, $locale: String, $keyword: String, $createdAt: String, $jobFunctions: [Int], $categories: [String], $locations: [Int], $careerLevels: [Int], $minSalary: Int, $maxSalary: Int, $salaryType: Int, $candidateSalary: Int, $candidateSalaryCurrency: String, $datePosted: Int, $jobTypes: [Int], $workTypes: [String], $industries: [Int], $page: Int, $pageSize: Int, $companyId: String, $advertiserId: String, $userAgent: String, $accNums: Int, $subAccount: Int, $minEdu: Int, $maxEdu: Int, $edus: [Int], $minExp: Int, $maxExp: Int, $seo: String, $searchFields: String, $candidateId: ID, $isDesktop: Boolean, $isCompanySearch: Boolean, $sort: String, $sVi: String, $duplicates: String, $flight: String, $solVisitorId: String) {
+                              jobs(
+                                country: $country
+                                locale: $locale
+                                keyword: $keyword
+                                createdAt: $createdAt
+                                jobFunctions: $jobFunctions
+                                categories: $categories
+                                locations: $locations
+                                careerLevels: $careerLevels
+                                minSalary: $minSalary
+                                maxSalary: $maxSalary
+                                salaryType: $salaryType
+                                candidateSalary: $candidateSalary
+                                candidateSalaryCurrency: $candidateSalaryCurrency
+                                datePosted: $datePosted
+                                jobTypes: $jobTypes
+                                workTypes: $workTypes
+                                industries: $industries
+                                page: $page
+                                pageSize: $pageSize
+                                companyId: $companyId
+                                advertiserId: $advertiserId
+                                userAgent: $userAgent
+                                accNums: $accNums
+                                subAccount: $subAccount
+                                minEdu: $minEdu
+                                edus: $edus
+                                maxEdu: $maxEdu
+                                minExp: $minExp
+                                maxExp: $maxExp
+                                seo: $seo
+                                searchFields: $searchFields
+                                candidateId: $candidateId
+                                isDesktop: $isDesktop
+                                isCompanySearch: $isCompanySearch
+                                sort: $sort
+                                sVi: $sVi
+                                duplicates: $duplicates
+                                flight: $flight
+                                solVisitorId: $solVisitorId
+                              ) {
+                                total
+                                totalJobs
+                                relatedSearchKeywords {
+                                  keywords
+                                  type
+                                  totalJobs
+                                }
+                                solMetadata
+                                suggestedEmployer {
+                                  name
+                                  totalJobs
+                                }
+                                queryParameters {
+                                  key
+                                  searchFields
+                                  pageSize
+                                }
+                                experiments {
+                                  flight
+                                }
+                                jobs {
+                                  id
+                                  adType
+                                  sourceCountryCode
+                                  isStandout
+                                  companyMeta {
+                                    id
+                                    advertiserId
+                                    isPrivate
+                                    name
+                                    logoUrl
+                                    slug
+                                  }
+                                  jobTitle
+                                  jobUrl
+                                  jobTitleSlug
+                                  description
+                                  employmentTypes {
+                                    code
+                                    name
+                                  }
+                                  sellingPoints
+                                  locations {
+                                    code
+                                    name
+                                    slug
+                                    children {
+                                      code
+                                      name
+                                      slug
+                                    }
+                                  }
+                                  categories {
+                                    code
+                                    name
+                                    children {
+                                      code
+                                      name
+                                    }
+                                  }
+                                  postingDuration
+                                  postedAt
+                                  salaryRange {
+                                    currency
+                                    max
+                                    min
+                                    period
+                                    term
+                                  }
+                                  salaryVisible
+                                  bannerUrl
+                                  isClassified
+                                  solMetadata
+                                }
+                              }
+                            }
+                ",
+                OperationName = "getJobs",
+                Variables = new
+                {
+                    keyword = "",
+                    jobFunctions = new int[] { 131 },
+                    locations = new string[] { },
+                    salaryType = 1,
+                    jobTypes = new string[] { },
+                    createdAt = "",
+                    careerLevels = new string[] { },
+                    page = 1,
+                    sort = "createdAt",
+                    country = "hk",
+                    sVi = "",
+                    solVisitorId = "3a9cde3c-5dd2-4519-bfdf-a1d7d2acced9",
+                    categories = new string[] { "131" },
+                    workTypes = new string[] { },
+                    userAgent = "Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120.0.0.0%20Safari/537.36%20Edg/120.0.0.0",
+                    industries = new string[] { },
+                    locale = "en"
+                }
+            };
+
+            var qlResponse = await graphQLClient.SendQueryAsync<JsonObject>(request);
+
+            var jobsObj = qlResponse.Data["jobs"];
+            var total = jobsObj["total"];
+            var pageSize = jobsObj["solMetadata"]?["pageSize"];
+            var pageNumber = jobsObj["solMetadata"]?["pageNumber"];
+            var totalJobCount = jobsObj["solMetadata"]?["totalJobCount"];
+
+            var jobArray = jobsObj["jobs"].AsArray();
+
+
+            //Console.WriteLine("raw response:");
+            //Console.WriteLine(JsonSerializer.Serialize(graphQLResponse, new JsonSerializerOptions { WriteIndented = true }));
+
+            //Console.WriteLine();
+            //Console.WriteLine($"Name: {graphQLResponse.Data.Person.Name}");
+            //var films = string.Join(", ", graphQLResponse.Data.Person.FilmConnection.Films.Select(f => f.Title));
+            //Console.WriteLine($"Films: {films}");
+
+            //Console.WriteLine();
+            //Console.WriteLine("Press any key to quit...");
+            //Console.ReadKey();
+
+
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
         }
     }

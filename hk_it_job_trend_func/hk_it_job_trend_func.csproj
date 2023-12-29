@@ -6,6 +6,8 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="GraphQL.Client" Version="6.0.2" />
+    <PackageReference Include="GraphQL.Client.Serializer.SystemTextJson" Version="6.0.2" />
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.15.0" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.OpenApi" Version="1.0.0" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.2.0" />
