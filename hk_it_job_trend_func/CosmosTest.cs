@@ -17,8 +17,8 @@ namespace hk_it_job_trend_func
         public void Run([TimerTrigger("0 */5 * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
         {
             using CosmosClient client = new CosmosClient(connectionString: Environment.GetEnvironmentVariable("cosmosdb"));
-
-
+            client.CreateDatabaseIfNotExistsAsync("jobs");
+            //client.
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
         }
     }
