@@ -5,6 +5,7 @@ using GraphQL.Client.Serializer.SystemTextJson;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 
+using System;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
