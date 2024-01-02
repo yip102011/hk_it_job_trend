@@ -4,22 +4,18 @@
       "type": "appInsights.sdk"
     },
     "storage1": {
-      "containerPorts": "10000:10000,10001:10001,10002:10002",
-      "secretStore": null,
-      "containerName": "storage_account",
-      "containerImage": "mcr.microsoft.com/azure-storage/azurite",
-      "type": "storage.container",
+      "type": "storage.emulator",
       "connectionId": "AzureWebJobsStorage"
     },
     "cosmosdb1": {
       "serviceConnectorResourceId": "",
       "containerPorts": "8081:8081,10251:10251,10252:10252,10253:10253,10254:10254",
       "secretStore": null,
-      "containerName": "cosmos_db",
+      "containerName": "cosmosdb",
       "containerImage": "mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator",
+      "resourceId": null,
       "type": "cosmosdb.container",
-      "connectionId": "cosmos_db",
-      "dynamicId": null
+      "connectionId": "cosmosdb"
     }
   }
 }

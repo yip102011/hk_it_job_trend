@@ -2,13 +2,8 @@
   "profiles": {
     "hk_it_job_trend_func": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7237"
-    },
-    "Docker": {
-      "commandName": "Docker",
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
-      "httpPort": 30944,
-      "useSSL": false
+      "commandLineArgs": "--port 7278",
+      "launchBrowser": false
     }
   }
 }

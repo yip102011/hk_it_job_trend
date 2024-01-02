@@ -5,7 +5,6 @@ using GraphQL.Client.Serializer.SystemTextJson;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 
-using System;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
@@ -13,16 +12,29 @@ namespace hk_it_job_trend_func
 {
     public class JobsdbCrawler
     {
-        [FunctionName("JobsdbCrawler")]
-        public static async Task Run([TimerTrigger("0 */5 * * * *"
-                                                                                    #if DEBUG
-                                                                                    , RunOnStartup =true
-                                                                                    #endif
-            )] TimerInfo myTimer, ILogger log)
+        [FunctionName(nameof(JobsdbCrawler))]
+        public async Task Run([TimerTrigger("0 */5 * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
         {
             using var graphQLClient = new GraphQLHttpClient("https://xapi.supercharge-srp.co/job-search/graphql?country=hk&isSmartSearch=true", new SystemTextJsonSerializer());
 
-            var request = new GraphQLRequest
+            GraphQLRequest request = createRequest(1);
+
+            var qlResponse = await graphQLClient.SendQueryAsync<JsonObject>(request);
+
+            var jobsObj = qlResponse.Data["jobs"];
+            var total = jobsObj["total"];
+            var pageSize = jobsObj["solMetadata"]?["pageSize"];
+            var pageNumber = jobsObj["solMetadata"]?["pageNumber"];
+            var totalJobCount = jobsObj["solMetadata"]?["totalJobCount"];
+
+            var jobArray = jobsObj["jobs"].AsArray();
+
+            log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
+        }
+
+        private static GraphQLRequest createRequest(int page)
+        {
+            return new GraphQLRequest
             {
                 Query = @"
                             query getJobs($country: String, $locale: String, $keyword: String, $createdAt: String, $jobFunctions: [Int], $categories: [String], $locations: [Int], $careerLevels: [Int], $minSalary: Int, $maxSalary: Int, $salaryType: Int, $candidateSalary: Int, $candidateSalaryCurrency: String, $datePosted: Int, $jobTypes: [Int], $workTypes: [String], $industries: [Int], $page: Int, $pageSize: Int, $companyId: String, $advertiserId: String, $userAgent: String, $accNums: Int, $subAccount: Int, $minEdu: Int, $maxEdu: Int, $edus: [Int], $minExp: Int, $maxExp: Int, $seo: String, $searchFields: String, $candidateId: ID, $isDesktop: Boolean, $isCompanySearch: Boolean, $sort: String, $sVi: String, $duplicates: String, $flight: String, $solVisitorId: String) {
@@ -154,7 +166,7 @@ namespace hk_it_job_trend_func
                     jobTypes = new string[] { },
                     createdAt = "",
                     careerLevels = new string[] { },
-                    page = 1,
+                    page = page,
                     sort = "createdAt",
                     country = "hk",
                     sVi = "",
@@ -166,32 +178,6 @@ namespace hk_it_job_trend_func
                     locale = "en"
                 }
             };
-
-            var qlResponse = await graphQLClient.SendQueryAsync<JsonObject>(request);
-
-            var jobsObj = qlResponse.Data["jobs"];
-            var total = jobsObj["total"];
-            var pageSize = jobsObj["solMetadata"]?["pageSize"];
-            var pageNumber = jobsObj["solMetadata"]?["pageNumber"];
-            var totalJobCount = jobsObj["solMetadata"]?["totalJobCount"];
-
-            var jobArray = jobsObj["jobs"].AsArray();
-
-
-            //Console.WriteLine("raw response:");
-            //Console.WriteLine(JsonSerializer.Serialize(graphQLResponse, new JsonSerializerOptions { WriteIndented = true }));
-
-            //Console.WriteLine();
-            //Console.WriteLine($"Name: {graphQLResponse.Data.Person.Name}");
-            //var films = string.Join(", ", graphQLResponse.Data.Person.FilmConnection.Films.Select(f => f.Title));
-            //Console.WriteLine($"Films: {films}");
-
-            //Console.WriteLine();
-            //Console.WriteLine("Press any key to quit...");
-            //Console.ReadKey();
-
-
-            log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
         }
     }
 }

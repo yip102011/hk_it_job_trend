@@ -1,7 +1,6 @@
 using System;
 using System.Threading.Tasks;
 
-using Azure.Core;
 using Azure.Identity;
 
 using Microsoft.Azure.Cosmos;
@@ -13,17 +12,12 @@ namespace hk_it_job_trend_func
 {
     public class CosmosTest
     {
-        [FunctionName("CosmosTest")]
-        public static async Task Run([TimerTrigger("0 */5 * * * *"
-                                                                                    #if DEBUG
-                                                                                    , RunOnStartup =true
-                                                                                    #endif
-            )] TimerInfo myTimer, ILogger log)
-        {
 
-            TokenCredential credential = new DefaultAzureCredential();
-            using CosmosClient client = new(connectionString: Environment.GetEnvironmentVariable("cosmos_db"));
-            //client.
+        [FunctionName(nameof(CosmosTest))]
+        public void Run([TimerTrigger("0 */5 * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
+        {
+            using CosmosClient client = new CosmosClient(connectionString: Environment.GetEnvironmentVariable("cosmosdb"));
+
 
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
         }
