@@ -24,7 +24,7 @@ namespace hk_it_job_trend_func
         }
 
         [FunctionName(nameof(JobsdbCrawler))]
-        public async Task Run([TimerTrigger("0 0 1 * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
+        public async Task Run([TimerTrigger("0 0 1 1 * *", RunOnStartup = false)] TimerInfo myTimer, ILogger log)
         {
             log.LogInformation("Function Start");
             using var graphQLClient = new GraphQLHttpClient("https://xapi.supercharge-srp.co/job-search/graphql?country=hk&isSmartSearch=true", new SystemTextJsonSerializer());
