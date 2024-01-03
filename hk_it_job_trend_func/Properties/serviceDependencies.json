@@ -5,8 +5,7 @@
     },
     "cosmosdb1": {
       "type": "cosmosdb",
-      "connectionId": "cosmosdb",
-      "dynamicId": null
+      "connectionId": "cosmosdb"
     },
     "storage1": {
       "type": "storage",
