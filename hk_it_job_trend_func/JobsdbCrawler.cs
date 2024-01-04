@@ -2,12 +2,16 @@ using GraphQL;
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.SystemTextJson;
 
+using hk_it_job_trend_func.Models;
+
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
@@ -24,48 +28,85 @@ namespace hk_it_job_trend_func
         }
 
         [FunctionName(nameof(JobsdbCrawler))]
-        public async Task Run([TimerTrigger("0 0 1 1 * *", RunOnStartup = false)] TimerInfo myTimer, ILogger log)
+        public async Task Run([TimerTrigger("0 0 1 * * *", RunOnStartup = false)] TimerInfo myTimer, ILogger log)
         {
-            log.LogInformation("Function Start");
-            using var graphQLClient = new GraphQLHttpClient("https://xapi.supercharge-srp.co/job-search/graphql?country=hk&isSmartSearch=true", new SystemTextJsonSerializer());
+            log.LogInformation("function start");
 
-            GraphQLRequest request = createRequest(1);
-
-            log.LogInformation("Send qraphQL query");
-            var qlResponse = await graphQLClient.SendQueryAsync<JsonObject>(request);
-
-            var jobsObj = qlResponse.Data["jobs"];
-            var total = jobsObj["total"];
-            var pageSize = jobsObj["solMetadata"]?["pageSize"];
-            var pageNumber = jobsObj["solMetadata"]?["pageNumber"];
-            var totalJobCount = jobsObj["solMetadata"]?["totalJobCount"];
-            var jobArray = jobsObj["jobs"].AsArray();
-
-            //foreach (var job in jobArray)
-            //{
-            //    var obj = job.AsObject();
-            //    var id = obj["id"].GetValue<string>();
-            //    obj.Add("job_id", id);
-            //    obj.Remove("id");
-            //}
-
-            var cosmosClient = new CosmosClient(connectionString: _config.GetValue<string>("cosmosdb"), new CosmosClientOptions {   });
+            // get cosmosdb container
+            log.LogInformation("get cosmosdb container");
+            var cosmosClient = new CosmosClient(connectionString: _config.GetValue<string>("cosmosdb"), new CosmosClientOptions { });
             var db = cosmosClient.GetDatabase("jobs");
-            var container = db.GetContainer("jobsdb");
+            var jobsdb_container = (await db.CreateContainerIfNotExistsAsync("jobsdb", "/companyMeta/slug")).Container;
 
-            ParallelOptions options = new ParallelOptions { MaxDegreeOfParallelism = 10 };
-            await Parallel.ForEachAsync(jobArray, options, async (job, cancelToken) =>
+            //defind a last date, stop query when job posted date before last date.
+            var last_posted_at = await GetLastPostedAt(jobsdb_container, defaultValue: DateTime.Today);
+
+            // send query to get job
+            List<Job> jobList = new List<Job>();
+            using var graphQLClient = new GraphQLHttpClient("https://xapi.supercharge-srp.co/job-search/graphql?country=hk&isSmartSearch=true", new SystemTextJsonSerializer());
+            int max_query_page = 100;
+            for (int page = 1; page < max_query_page; page++)
             {
-               var j =  job.Deserialize<Models.Job>(new JsonSerializerOptions {  UnknownTypeHandling = System.Text.Json.Serialization.JsonUnknownTypeHandling.JsonElement });
-                //JsonConvert.DeserializeObject<Models.Job>(job.Deserialize);
+                log.LogInformation($"start query page {page}");
+                GraphQLRequest request = createGraphQLRequest(page);
+                var qlResponse = await graphQLClient.SendQueryAsync<JsonObject>(request);
+                var jobsObj = qlResponse.Data["jobs"];
+                //var total = jobsObj["total"];
+                //var pageSize = jobsObj["solMetadata"]?["pageSize"];
+                //var pageNumber = jobsObj["solMetadata"]?["pageNumber"];
+                //var totalJobCount = jobsObj["solMetadata"]?["totalJobCount"];
+                var jobJsonArray = jobsObj["jobs"].AsArray();
 
-                await container.CreateItemAsync(j);
-            });
-            
-            log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
+                var queriedJobList = jobJsonArray.Select(j => j.Deserialize<Job>());
+
+                jobList.AddRange(queriedJobList);
+
+                //stop query if any job posted date before last date.
+                if (queriedJobList.Any(j => j.postedAt <= last_posted_at))
+                {
+                    break;
+                }
+
+                // add some delay, incase jobsdb block me 
+                await Task.Delay(Random.Shared.Next(500, 2000));
+            }
+
+            // insert one by one, start from oldest job, incase error occur
+            jobList.Reverse();
+            log.LogInformation($"start upsert job to cosmosdb");
+            foreach (var job in jobList)
+            {
+                await jobsdb_container.UpsertItemAsync(job);
+            }
+
+            log.LogInformation($"function finised at: {DateTime.Now}");
         }
 
-        private static GraphQLRequest createRequest(int page)
+        private async Task<DateTime> GetLastPostedAt(Container jobsdb_container, DateTime defaultValue)
+        {
+            // default today 00:00
+            var maxPostedAt = defaultValue;
+
+            var query = new QueryDefinition("SELECT MAX(j.postedAt) AS postedAt FROM jobsdb AS j");
+            using var feed = jobsdb_container.GetItemQueryIterator<Job>(query);
+
+            if (feed.HasMoreResults)
+            {
+                FeedResponse<Job> response = await feed.ReadNextAsync();
+                var e = response.GetEnumerator();
+                if (e.MoveNext())
+                {
+                    if (e.Current.postedAt > DateTime.MinValue)
+                    {
+                        maxPostedAt = e.Current.postedAt;
+                    }
+                }
+            }
+
+            return maxPostedAt;
+        }
+
+        private static GraphQLRequest createGraphQLRequest(int page)
         {
             const int JOB_FUNCTION__INFORMATION_TECHNOLOGY = 131;
             return new GraphQLRequest

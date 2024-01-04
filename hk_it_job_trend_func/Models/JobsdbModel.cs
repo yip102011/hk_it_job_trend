@@ -1,132 +1,122 @@
-﻿
+﻿using Newtonsoft.Json;
+
 using System;
 using System.Collections.Generic;
-
-using J = System.Text.Json.Serialization.JsonPropertyNameAttribute;
-
-namespace hk_it_job_trend_func.Models
-{
-    public partial class JobsdbResponse
-    {
-        [J("jobs")] public Jobs Jobs { get; set; }
-    }
-
-    public partial class Jobs
-    {
-        [J("total")] public long Total { get; set; }
-        [J("totalJobs")] public long TotalJobs { get; set; }
-        [J("relatedSearchKeywords")] public dynamic[] RelatedSearchKeywords { get; set; }
-        [J("solMetadata")] public SolMetadata SolMetadata { get; set; }
-        [J("suggestedEmployer")] public dynamic SuggestedEmployer { get; set; }
-        [J("queryParameters")] public QueryParameters QueryParameters { get; set; }
-        [J("experiments")] public Experiments Experiments { get; set; }
-        [J("jobs")] public Job[] JobArray { get; set; }
-
-    }
-
-    public partial class Experiments
-    {
-        [J("flight")] public string Flight { get; set; }
-    }
-
-    public partial class QueryParameters
-    {
-        [J("key")] public string Key { get; set; }
-        [J("searchFields")] public string SearchFields { get; set; }
-        [J("pageSize")] public long PageSize { get; set; }
-    }
-
-    public partial class SolMetadata
-    {
-        [J("requestToken")] public Guid RequestToken { get; set; }
-        [J("token")] public string Token { get; set; }
-        [J("sortMode")] public string SortMode { get; set; }
-        [J("categories")] public string[] Categories { get; set; }
-        [J("pageSize")] public long PageSize { get; set; }
-        [J("pageNumber")] public long PageNumber { get; set; }
-        [J("totalJobCount")] public long TotalJobCount { get; set; }
-
-        
-        [J("tags")] public dynamic Tags { get; set; }
-    }
-}
-
-
+using System.Runtime.InteropServices;
 
 namespace hk_it_job_trend_func.Models
 {
-    public partial class Job
+    public class JobsdbResponse
     {
-        [J("id")] public string id { get; set; }
-        [J("adType")] public string AdType { get; set; }
-        [J("sourceCountryCode")] public string SourceCountryCode { get; set; }
-        [J("isStandout")] public bool IsStandout { get; set; }
-        [J("companyMeta")] public CompanyMeta CompanyMeta { get; set; }
-        [J("jobTitle")] public string JobTitle { get; set; }
-        [J("jobUrl")] public Uri JobUrl { get; set; }
-        [J("jobTitleSlug")] public string JobTitleSlug { get; set; }
-        [J("description")] public string Description { get; set; }
-        [J("employmentTypes")] public EmploymentType[] EmploymentTypes { get; set; }
-        [J("sellingPoints")] public string[] SellingPoints { get; set; }
-        [J("locations")] public Location[] Locations { get; set; }
-        [J("categories")] public Category[] Categories { get; set; }
-        [J("postingDuration")] public string PostingDuration { get; set; }
-        [J("postedAt")] public DateTimeOffset PostedAt { get; set; }
-        [J("salaryRange")] public SalaryRange SalaryRange { get; set; }
-        [J("salaryVisible")] public bool SalaryVisible { get; set; }
-        [J("bannerUrl")] public string BannerUrl { get; set; }
-        [J("isClassified")] public bool IsClassified { get; set; }
-        [J("solMetadata")] public JobSolMetadata SolMetadata { get; set; }
+        public Jobs jobs { get; set; }
     }
-
-    public partial class Category
+    public class Jobs
     {
-        [J("code")] public string Code { get; set; }
-        [J("name")] public string Name { get; set; }
-        [J("children")] public dynamic Children { get; set; }
+        public int total { get; set; }
+        public int totalJobs { get; set; }
+        public List<object> relatedSearchKeywords { get; set; }
+        public SolMetadata solMetadata { get; set; }
+        public object suggestedEmployer { get; set; }
+        public QueryParameters queryParameters { get; set; }
+        public Experiments experiments { get; set; }
+        public Job[] JobArray { get; set; }
     }
-
-    public partial class CompanyMeta
+    public class Experiments
     {
-        [J("id")] public string Id { get; set; }
-        [J("advertiserId")] public string AdvertiserId { get; set; }
-        [J("isPrivate")] public bool IsPrivate { get; set; }
-        [J("name")] public string Name { get; set; }
-        [J("logoUrl")] public string LogoUrl { get; set; }
-        [J("slug")] public string Slug { get; set; }
+        public string flight { get; set; }
     }
-
-    public partial class EmploymentType
+    public class QueryParameters
     {
-        [J("code")] public string Code { get; set; }
-        [J("name")] public string Name { get; set; }
+        public string key { get; set; }
+        public string searchFields { get; set; }
+        public int pageSize { get; set; }
     }
-
-    public partial class Location
+    public class SolMetadata
     {
-        [J("code")] public string Code { get; set; }
-        [J("name")] public string Name { get; set; }
-        [J("slug")] public string Slug { get; set; }
-        [J("children")] public dynamic Children { get; set; }
-    }
-
-    public partial class SalaryRange
-    {
-        [J("currency")] public dynamic Currency { get; set; }
-        [J("max")] public dynamic Max { get; set; }
-        [J("min")] public dynamic Min { get; set; }
-        [J("period")] public string Period { get; set; }
-        [J("term")] public dynamic Term { get; set; }
-    }
-
-    public partial class JobSolMetadata
-    {
-        [J("searchRequestToken")] public Guid SearchRequestToken { get; set; }
-        [J("token")] public string Token { get; set; }
-        [J("jobId")] public string JobId { get; set; }
-        [J("section")] public string Section { get; set; }
-        [J("sectionRank")] public long SectionRank { get; set; }
-        [J("jobAdType")] public string JobAdType { get; set; }
-        [J("tags")] public dynamic Tags { get; set; }
+        public string requestToken { get; set; }
+        public string token { get; set; }
+        public string sortMode { get; set; }
+        public List<string> categories { get; set; }
+        public int pageSize { get; set; }
+        public int pageNumber { get; set; }
+        public int totalJobCount { get; set; }
+        public dynamic tags { get; set; }
     }
 }
+
+namespace hk_it_job_trend_func.Models
+{
+    public class Job
+    {
+        public string id { get; set; }
+        public string adType { get; set; }
+        public string sourceCountryCode { get; set; }
+        public bool isStandout { get; set; }
+        public CompanyMeta companyMeta { get; set; }
+        public string jobTitle { get; set; }
+        public string jobUrl { get; set; }
+        public string jobTitleSlug { get; set; }
+        public string description { get; set; }
+        public List<EmploymentType> employmentTypes { get; set; }
+        public List<string> sellingPoints { get; set; }
+        public List<Location> locations { get; set; }
+        public List<Category> categories { get; set; }
+        public string postingDuration { get; set; }
+        public DateTime postedAt { get; set; }
+        public SalaryRange salaryRange { get; set; }
+        public bool salaryVisible { get; set; }
+        public string bannerUrl { get; set; }
+        public bool isClassified { get; set; }
+        public SolMetadata solMetadata { get; set; }
+    }
+
+    public class Category
+    {
+        public string code { get; set; }
+        public string name { get; set; }
+        public object children { get; set; }
+    }
+
+    public class CompanyMeta
+    {
+        public string id { get; set; }
+        public string advertiserId { get; set; }
+        public bool isPrivate { get; set; }
+        public string name { get; set; }
+        public string logoUrl { get; set; }
+        public string slug { get; set; }
+    }
+
+    public class EmploymentType
+    {
+        public string code { get; set; }
+        public string name { get; set; }
+    }
+
+    public class Location
+    {
+        public string code { get; set; }
+        public string name { get; set; }
+        public string slug { get; set; }
+        public object children { get; set; }
+    }
+
+    public class SalaryRange
+    {
+        public object currency { get; set; }
+        public object max { get; set; }
+        public object min { get; set; }
+        public string period { get; set; }
+        public object term { get; set; }
+    }
+
+    public class JobSolMetadata
+    {
+        public string searchRequestToken { get; set; }
+        public string token { get; set; }
+        public string jobId { get; set; }
+        public string section { get; set; }
+        public int sectionRank { get; set; }
+        public string jobAdType { get; set; }
+        public dynamic tags { get; set; }
+    }}
