@@ -28,7 +28,7 @@ namespace hk_it_job_trend_func
         }
 
         [FunctionName(nameof(JobsdbCrawler))]
-        public async Task Run([TimerTrigger("0 0 1 * * *", RunOnStartup = false)] TimerInfo myTimer, ILogger log)
+        public async Task Run([TimerTrigger("0 0 1 * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
         {
             log.LogInformation("function start");
 
@@ -61,9 +61,10 @@ namespace hk_it_job_trend_func
 
                 jobList.AddRange(queriedJobList);
 
-                //stop query if any job posted date before last date.
+                //stop query if any job reach last posted date.
                 if (queriedJobList.Any(j => j.postedAt <= last_posted_at))
                 {
+                    log.LogInformation($"job list count: {jobList.Count}");
                     break;
                 }
 
@@ -72,12 +73,22 @@ namespace hk_it_job_trend_func
             }
 
             // insert one by one, start from oldest job, incase error occur
+            int upsertCount = 0;
+            int progressStep = jobList.Count / 10;
+            int progressPoint = progressStep;
             jobList.Reverse();
             log.LogInformation($"start upsert job to cosmosdb");
             foreach (var job in jobList)
             {
                 await jobsdb_container.UpsertItemAsync(job);
+                upsertCount++;
+                if (upsertCount >= progressPoint)
+                {
+                    log.LogInformation($"progress point, upserted count: {upsertCount}");
+                    progressPoint += progressStep;
+                }
             }
+            log.LogInformation($"done, upsert count: {upsertCount}");
 
             log.LogInformation($"function finised at: {DateTime.Now}");
         }
