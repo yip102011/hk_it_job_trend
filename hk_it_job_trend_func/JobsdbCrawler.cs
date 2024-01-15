@@ -2,12 +2,12 @@ using GraphQL;
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.SystemTextJson;
 
-using hk_it_job_trend_func.Models;
-
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+
+using Newtonsoft.Json.Linq;
 
 using System;
 using System.Collections.Generic;
@@ -22,75 +22,100 @@ namespace hk_it_job_trend_func
     {
         private readonly IConfiguration _config;
 
+        // only used when config "VISITOR_GUID" not set
+        private const string DEFAULT_VISITOR_GUID = "effc67eb-b913-418f-9914-ebf1bfbb3809";
+        private const string postedAt = "postedAt";
+
+        private const string COSMOS_DATABASE_ID = "jobs";
+        private const string COSMOS_CONTAINER_ID = "jobsdb";
+        private const string COSMOS_PARTITION_KEY = "/companyMeta/slug";
+        private const string COSMOS_CONN_STR_CONFIG_KEY = "cosmosdb";
+
         public JobsdbCrawler(IConfiguration config)
         {
             _config = config;
         }
 
         [FunctionName(nameof(JobsdbCrawler))]
-        public async Task Run([TimerTrigger("0 0 1 * * *", RunOnStartup = false)] TimerInfo myTimer, ILogger log)
+        public async Task Run([TimerTrigger("0 0 1 * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
         {
-            log.LogInformation("function start");
+            log.LogInformation($"function started at: {DateTime.Now}");
 
             // get cosmosdb container
             log.LogInformation("get cosmosdb container");
-            var cosmosClient = new CosmosClient(connectionString: _config.GetValue<string>("cosmosdb"), new CosmosClientOptions { });
-            var db = cosmosClient.GetDatabase("jobs");
-            var jobsdb_container = (await db.CreateContainerIfNotExistsAsync("jobsdb", "/companyMeta/slug")).Container;
+            Container jobsdb_container = await GetCosmosContainer();
 
             //defind a last date, stop query when job posted date before last date.
             var last_posted_at = await GetLastPostedAt(jobsdb_container, defaultValue: DateTime.Today);
+            log.LogInformation($"last_posted_at: {last_posted_at.ToString("yyyy-MM-dd HH:mm:ss")}");
 
             // send query to get job
-            List<Job> jobList = new List<Job>();
+            var jobList = new List<JsonObject>();
             using var graphQLClient = new GraphQLHttpClient("https://xapi.supercharge-srp.co/job-search/graphql?country=hk&isSmartSearch=true", new SystemTextJsonSerializer());
             int max_query_page = 100;
+            var visitorGuid = _config.GetValue("VISITOR_GUID", DEFAULT_VISITOR_GUID);
             for (int page = 1; page < max_query_page; page++)
             {
                 log.LogInformation($"start query page {page}");
-                GraphQLRequest request = createGraphQLRequest(page);
+                GraphQLRequest request = createGraphQLRequest(page, visitorGuid);
                 var qlResponse = await graphQLClient.SendQueryAsync<JsonObject>(request);
                 var jobsObj = qlResponse.Data["jobs"];
+
                 //var total = jobsObj["total"];
                 //var pageSize = jobsObj["solMetadata"]?["pageSize"];
                 //var pageNumber = jobsObj["solMetadata"]?["pageNumber"];
                 //var totalJobCount = jobsObj["solMetadata"]?["totalJobCount"];
+
                 var jobJsonArray = jobsObj["jobs"].AsArray();
+                var pagedJobList = jobJsonArray.Select(j => j.Deserialize<JsonObject>());
+                jobList.AddRange(pagedJobList);
 
-                var queriedJobList = jobJsonArray.Select(j => j.Deserialize<Job>());
-
-                jobList.AddRange(queriedJobList);
-
-                //stop query if any job reach last posted date.
-                if (queriedJobList.Any(j => j.postedAt <= last_posted_at))
+                //stop at this page if any job reach last posted date
+                if (pagedJobList.Any(j =>
+                {
+                    return j[postedAt].AsValue().Deserialize<DateTime>() <= last_posted_at;
+                }))
                 {
                     log.LogInformation($"job list count: {jobList.Count}");
                     break;
                 }
 
-                // add some delay, incase jobsdb block me 
+                // add some delay, incase jobsdb block me
                 await Task.Delay(Random.Shared.Next(500, 2000));
             }
 
-            // insert one by one, start from oldest job, incase error occur
+
             int upsertCount = 0;
             int progressStep = jobList.Count / 10;
             int progressPoint = progressStep;
-            jobList.Reverse();
             log.LogInformation($"start upsert job to cosmosdb");
+
+            // start from oldest job
+            jobList.Reverse();
+
+            // insert into cosmosdb one by one, incase error occur
             foreach (var job in jobList)
             {
-                await jobsdb_container.UpsertItemAsync(job);
+                await jobsdb_container.UpsertItemAsync(JObject.Parse(job.ToJsonString()));
                 upsertCount++;
                 if (upsertCount >= progressPoint)
                 {
-                    log.LogInformation($"progress point, upserted count: {upsertCount}");
+                    log.LogInformation($"progress check point, upserted count: {upsertCount}");
                     progressPoint += progressStep;
                 }
             }
+
             log.LogInformation($"done, upsert count: {upsertCount}");
 
             log.LogInformation($"function finised at: {DateTime.Now}");
+        }
+
+        private async Task<Container> GetCosmosContainer()
+        {
+            var cosmosClient = new CosmosClient(connectionString: _config.GetValue<string>(COSMOS_CONN_STR_CONFIG_KEY), new CosmosClientOptions { });
+            var db = cosmosClient.GetDatabase(COSMOS_DATABASE_ID);
+            var jobsdb_container = (await db.CreateContainerIfNotExistsAsync(COSMOS_CONTAINER_ID, COSMOS_PARTITION_KEY)).Container;
+            return jobsdb_container;
         }
 
         private async Task<DateTime> GetLastPostedAt(Container jobsdb_container, DateTime defaultValue)
@@ -98,18 +123,19 @@ namespace hk_it_job_trend_func
             // default today 00:00
             var maxPostedAt = defaultValue;
 
-            var query = new QueryDefinition("SELECT MAX(j.postedAt) AS postedAt FROM jobsdb AS j");
-            using var feed = jobsdb_container.GetItemQueryIterator<Job>(query);
+            var query = new QueryDefinition($"SELECT MAX(j.{postedAt}) AS {postedAt} FROM jobsdb AS j");
+            using var feed = jobsdb_container.GetItemQueryIterator<JObject>(query);
 
             if (feed.HasMoreResults)
             {
-                FeedResponse<Job> response = await feed.ReadNextAsync();
+                var response = await feed.ReadNextAsync();
                 var e = response.GetEnumerator();
                 if (e.MoveNext())
                 {
-                    if (e.Current.postedAt > DateTime.MinValue)
+                    var d = e.Current.Value<DateTime>(postedAt);
+                    if (d > DateTime.MinValue)
                     {
-                        maxPostedAt = e.Current.postedAt;
+                        maxPostedAt = d;
                     }
                 }
             }
@@ -117,7 +143,7 @@ namespace hk_it_job_trend_func
             return maxPostedAt;
         }
 
-        private static GraphQLRequest createGraphQLRequest(int page)
+        private static GraphQLRequest createGraphQLRequest(int page, string visitorGuid)
         {
             const int JOB_FUNCTION__INFORMATION_TECHNOLOGY = 131;
             return new GraphQLRequest
@@ -256,7 +282,7 @@ namespace hk_it_job_trend_func
                     sort = "createdAt",
                     country = "hk",
                     sVi = "",
-                    solVisitorId = "3a9cde3c-5dd2-4519-bfdf-a1d7d2acced9",
+                    solVisitorId = visitorGuid,
                     categories = new string[] { JOB_FUNCTION__INFORMATION_TECHNOLOGY.ToString() },
                     workTypes = new string[] { },
                     userAgent = "Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120.0.0.0%20Safari/537.36%20Edg/120.0.0.0",

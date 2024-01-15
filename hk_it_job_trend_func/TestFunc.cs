@@ -21,7 +21,7 @@ namespace hk_it_job_trend_func
         }
 
         [FunctionName(nameof(TestFunc))]
-        public async Task Run([TimerTrigger("0 0 1 1 12 *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
+        public async Task Run([TimerTrigger("0 0 1 1 12 *", RunOnStartup = false)] TimerInfo myTimer, ILogger log)
         {
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
 
