@@ -24,13 +24,22 @@ namespace hk_it_job_trend_func
         public async Task Run([TimerTrigger("0 0 1 1 12 *", RunOnStartup = false)] TimerInfo myTimer, ILogger log)
         {
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
-            //var cosmosClient = new CosmosClient(connectionString: _config.GetValue<string>("cosmosdb"), new CosmosClientOptions { });
-            //var db = cosmosClient.GetDatabase("jobs");
 
-            //var r = await db.CreateContainerIfNotExistsAsync("jobsdb", "/companyMeta/slug");
-            //var jobsdb_container = r.Container;
+            var cosmosClient = new CosmosClient(connectionString: _config.GetValue<string>("cosmosdb"), new CosmosClientOptions { });
+            var db = cosmosClient.GetDatabase("jobs");
 
-            //await jobsdb_container.UpsertItemAsync(GetJobExample());
+            var r = await db.CreateContainerIfNotExistsAsync("jobsdb", "/companyMeta/slug");
+            var jobsdb_container = r.Container;
+
+
+            var job = GetJobExample();
+            try
+            {
+                await jobsdb_container.DeleteItemAsync<dynamic>(job.id, new PartitionKey(job.companyMeta.slug));
+            }
+            catch { }
+
+            await jobsdb_container.UpsertItemAsync(GetJobExample());
 
             //DateTime maxPostedAt = await GetLastPostedAt(jobsdb_container);
 
