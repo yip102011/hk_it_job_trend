@@ -23,6 +23,13 @@ namespace hk_it_job_trend_func
         [FunctionName(nameof(TestFunc))]
         public async Task Run([TimerTrigger("0 0 1 1 12 *", RunOnStartup = false)] TimerInfo myTimer, ILogger log)
         {
+            return;
+
+            // get cosmosdb container
+            //log.LogInformation("get cosmosdb container");
+            await CreateCosmosDbContainerAsync();
+            return;
+
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
 
             var cosmosClient = new CosmosClient(connectionString: _config.GetValue<string>("cosmosdb"), new CosmosClientOptions { });
@@ -48,6 +55,26 @@ namespace hk_it_job_trend_func
 
             //log.LogInformation($"Parse: {d}");
             //log.LogInformation($"Now: {DateTime.Now}");
+        }
+
+        private async Task CreateCosmosDbContainerAsync()
+        {
+            var cosmosConnStr = _config.GetValue<string>(CosmosConfig.CONN_NAME);
+            var cosmosClient = new CosmosClient(connectionString: cosmosConnStr, new CosmosClientOptions { });
+            var dbResponse = await cosmosClient.CreateDatabaseIfNotExistsAsync(CosmosConfig.DB_NAME, ThroughputProperties.CreateAutoscaleThroughput(CosmosConfig.DB_MAX_THROUGHPUT));
+            var db = dbResponse.Database;
+
+            var jobsdbConResponse = await db.CreateContainerIfNotExistsAsync(new ContainerProperties(CosmosConfig.JOBSDB_CON_JOBSDB, CosmosConfig.JOBSDB_KEY_JOBSDB));
+            var jobsdbDetailConConResponse = await db.CreateContainerIfNotExistsAsync(new ContainerProperties(CosmosConfig.JOBSDB_CON_JOBSDB_DETAIL, CosmosConfig.JOBSDB_KEY_JOBSDB_DETAIL));
+            var leasesConResponse = await db.CreateContainerIfNotExistsAsync(new ContainerProperties(CosmosConfig.JOBSDB_CON_LEASES, CosmosConfig.JOBSDB_KEY_LEASES) { DefaultTimeToLive = CosmosConfig.JOBSDB_TTL_LEASES });
+        }
+
+        private async Task<Container> GetCosmosContainer(string connectionString, string databaseName, string containerName, string partitionKey)
+        {
+            var cosmosClient = new CosmosClient(connectionString: connectionString, new CosmosClientOptions { });
+            var db = cosmosClient.GetDatabase(databaseName);
+            var jobsdb_container = (await db.CreateContainerIfNotExistsAsync(containerName, partitionKey)).Container;
+            return jobsdb_container;
         }
 
         private async Task<DateTime> GetMaxPostedAt(Container jobsdb_container)

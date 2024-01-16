@@ -24,12 +24,6 @@ namespace hk_it_job_trend_func
 
         // only used when config "VISITOR_GUID" not set
         private const string DEFAULT_VISITOR_GUID = "effc67eb-b913-418f-9914-ebf1bfbb3809";
-        private const string postedAt = "postedAt";
-
-        private const string COSMOS_DATABASE_ID = "jobs";
-        private const string COSMOS_CONTAINER_ID = "jobsdb_detail";
-        private const string COSMOS_PARTITION_KEY = "/header/company/slug";
-        private const string COSMOS_CONN_STR_CONFIG_KEY = "cosmosdb";
 
         public JobsdbDetaiCrawler(IConfiguration config)
         {
@@ -38,43 +32,49 @@ namespace hk_it_job_trend_func
 
         [FunctionName(nameof(JobsdbDetaiCrawler))]
         public async Task Run([CosmosDBTrigger(
-            databaseName: COSMOS_DATABASE_ID,
-            containerName: "jobsdb",
-            Connection = COSMOS_CONN_STR_CONFIG_KEY,
-            LeaseContainerName = "leases",
-            CreateLeaseContainerIfNotExists = true)]IReadOnlyList<Job> jobList, ILogger log)
+            databaseName: CosmosConfig.DB_NAME,
+            containerName: CosmosConfig.JOBSDB_CON_JOBSDB,
+            Connection = CosmosConfig.CONN_NAME,
+            LeaseContainerName = CosmosConfig.JOBSDB_CON_LEASES,
+            CreateLeaseContainerIfNotExists = true)]IReadOnlyList<JObject> jobList, ILogger log)
         {
             log.LogInformation($"function started at: {DateTime.Now}");
-            log.LogInformation($"job count: {jobList.Count}");
+            log.LogInformation($"change feed job count: {jobList.Count}");
 
             // get cosmosdb container
             log.LogInformation("get cosmosdb container");
-            Container jobsdb_container = await GetCosmosContainer();
+            var cosmosConnStr = _config.GetValue<string>(CosmosConfig.CONN_NAME);
+            Container jobsdb_container = await GetCosmosContainer(cosmosConnStr, CosmosConfig.DB_NAME, CosmosConfig.JOBSDB_CON_JOBSDB_DETAIL, CosmosConfig.JOBSDB_KEY_JOBSDB_DETAIL);
 
             using var graphQLClient = new GraphQLHttpClient("https://xapi.supercharge-srp.co/job-search/graphql?country=hk&isSmartSearch=true", new SystemTextJsonSerializer());
             foreach (var job in jobList)
             {
-                log.LogInformation($"start query job id: {job.id}");
-
+                if (job.TryGetValue("id", out JToken idJToken) == false)
+                {
+                    log.LogInformation($"job don't have id, skip");
+                    continue;
+                }
+                var jobId = idJToken.Value<string>();
+                log.LogInformation($"[job id: {jobId}] start query ");
                 var visitorGuid = _config.GetValue("VISITOR_GUID", DEFAULT_VISITOR_GUID);
 
-                var request = createGraphQLRequest(job.id, visitorGuid);
+                var request = createGraphQLRequest(jobId, visitorGuid);
                 var qlResponse = await graphQLClient.SendQueryAsync<JsonObject>(request);
                 var jobDetail = qlResponse.Data["jobDetail"];
 
-                log.LogInformation($"start upsert job id: {job.id}");
+                log.LogInformation($"[job id: {jobId}] start upsert ");
                 await jobsdb_container.UpsertItemAsync(JObject.Parse(jobDetail.ToJsonString()));
-                log.LogInformation($"upsert success");
+                log.LogInformation($"[job id: {jobId}] upsert success ");
             }
 
             log.LogInformation($"function finised at: {DateTime.Now}");
         }
 
-        private async Task<Container> GetCosmosContainer()
+        private async Task<Container> GetCosmosContainer(string connectionString, string databaseName, string containerName, string partitionKey)
         {
-            var cosmosClient = new CosmosClient(connectionString: _config.GetValue<string>(COSMOS_CONN_STR_CONFIG_KEY), new CosmosClientOptions { });
-            var db = cosmosClient.GetDatabase(COSMOS_DATABASE_ID);
-            var jobsdb_container = (await db.CreateContainerIfNotExistsAsync(COSMOS_CONTAINER_ID, COSMOS_PARTITION_KEY)).Container;
+            var cosmosClient = new CosmosClient(connectionString: connectionString, new CosmosClientOptions { });
+            var db = cosmosClient.GetDatabase(databaseName);
+            var jobsdb_container = (await db.CreateContainerIfNotExistsAsync(containerName, partitionKey)).Container;
             return jobsdb_container;
         }
 

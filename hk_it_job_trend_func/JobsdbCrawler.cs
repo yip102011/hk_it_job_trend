@@ -2,6 +2,8 @@ using GraphQL;
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.SystemTextJson;
 
+using hk_it_job_trend_func.Models;
+
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Configuration;
@@ -26,11 +28,6 @@ namespace hk_it_job_trend_func
         private const string DEFAULT_VISITOR_GUID = "effc67eb-b913-418f-9914-ebf1bfbb3809";
         private const string postedAt = "postedAt";
 
-        private const string COSMOS_DATABASE_ID = "jobs";
-        private const string COSMOS_CONTAINER_ID = "jobsdb";
-        private const string COSMOS_PARTITION_KEY = "/companyMeta/slug";
-        private const string COSMOS_CONN_STR_CONFIG_KEY = "cosmosdb";
-
         public JobsdbCrawler(IConfiguration config)
         {
             _config = config;
@@ -43,7 +40,8 @@ namespace hk_it_job_trend_func
 
             // get cosmosdb container
             log.LogInformation("get cosmosdb container");
-            Container jobsdb_container = await GetCosmosContainer();
+            var cosmosConnStr = _config.GetValue<string>(CosmosConfig.CONN_NAME);
+            Container jobsdb_container = await GetCosmosContainer(cosmosConnStr, CosmosConfig.DB_NAME, CosmosConfig.JOBSDB_CON_JOBSDB, CosmosConfig.JOBSDB_KEY_JOBSDB);
 
             //defind a last date, stop query when job posted date before last date.
             var last_posted_at = await GetLastPostedAt(jobsdb_container, defaultValue: DateTime.Today);
@@ -84,37 +82,28 @@ namespace hk_it_job_trend_func
                 await Task.Delay(Random.Shared.Next(500, 2000));
             }
 
+            log.LogInformation($"start upsert job list to cosmosdb, job count: {jobList.Count}");
 
-            int upsertCount = 0;
-            int progressStep = jobList.Count / 10;
-            int progressPoint = progressStep;
-            log.LogInformation($"start upsert job to cosmosdb");
-
-            // start from oldest job
+            // start from oldest job, job should order by postedAt because 
             jobList.Reverse();
 
             // insert into cosmosdb one by one, incase error occur
             foreach (var job in jobList)
             {
-                await jobsdb_container.UpsertItemAsync(JObject.Parse(job.ToJsonString()));
-                upsertCount++;
-                if (upsertCount >= progressPoint)
-                {
-                    log.LogInformation($"progress check point, upserted count: {upsertCount}");
-                    progressPoint += progressStep;
-                }
-            }
+                var upsertJob = JObject.Parse(job.ToJsonString());
 
-            log.LogInformation($"done, upsert count: {upsertCount}");
+                log.LogInformation($"[job id: {upsertJob.Value<string>("id")}] start upsert");
+                await jobsdb_container.UpsertItemAsync(upsertJob);
+            }
 
             log.LogInformation($"function finised at: {DateTime.Now}");
         }
 
-        private async Task<Container> GetCosmosContainer()
+        private async Task<Container> GetCosmosContainer(string connectionString, string databaseName, string containerName, string partitionKey)
         {
-            var cosmosClient = new CosmosClient(connectionString: _config.GetValue<string>(COSMOS_CONN_STR_CONFIG_KEY), new CosmosClientOptions { });
-            var db = cosmosClient.GetDatabase(COSMOS_DATABASE_ID);
-            var jobsdb_container = (await db.CreateContainerIfNotExistsAsync(COSMOS_CONTAINER_ID, COSMOS_PARTITION_KEY)).Container;
+            var cosmosClient = new CosmosClient(connectionString: connectionString, new CosmosClientOptions { });
+            var db = cosmosClient.GetDatabase(databaseName);
+            var jobsdb_container = (await db.CreateContainerIfNotExistsAsync(containerName, partitionKey)).Container;
             return jobsdb_container;
         }
 
