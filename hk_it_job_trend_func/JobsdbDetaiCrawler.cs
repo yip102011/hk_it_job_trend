@@ -38,7 +38,7 @@ namespace hk_it_job_trend_func
             LeaseContainerName = CosmosConfig.JOBSDB_CON_LEASES,
             CreateLeaseContainerIfNotExists = true)]IReadOnlyList<JObject> jobList, ILogger log)
         {
-            log.LogInformation($"function started at: {DateTime.Now}");
+            //log.LogInformation($"function started at: {DateTime.Now}");
             log.LogInformation($"change feed job count: {jobList.Count}");
 
             // get cosmosdb container
@@ -49,22 +49,22 @@ namespace hk_it_job_trend_func
             using var graphQLClient = new GraphQLHttpClient("https://xapi.supercharge-srp.co/job-search/graphql?country=hk&isSmartSearch=true", new SystemTextJsonSerializer());
             foreach (var job in jobList)
             {
-                if (job.TryGetValue("id", out JToken idJToken) == false)
-                {
-                    log.LogInformation($"job don't have id, skip");
-                    continue;
-                }
-                var jobId = idJToken.Value<string>();
-                log.LogInformation($"[job id: {jobId}] start query ");
-                var visitorGuid = _config.GetValue("VISITOR_GUID", DEFAULT_VISITOR_GUID);
+                if (job.TryGetValue("id", out JToken idJToken) == false) { log.LogInformation($"job don't have id, skip"); continue; }
 
+                var jobId = idJToken.Value<string>();
+                log.LogInformation($"[job id: {jobId}]");
+
+                var visitorGuid = _config.GetValue("VISITOR_GUID", DEFAULT_VISITOR_GUID);
                 var request = createGraphQLRequest(jobId, visitorGuid);
                 var qlResponse = await graphQLClient.SendQueryAsync<JsonObject>(request);
                 var jobDetail = qlResponse.Data["jobDetail"];
 
-                log.LogInformation($"[job id: {jobId}] start upsert ");
+                //log.LogInformation($"[job id: {jobId}] start upsert ");
                 await jobsdb_container.UpsertItemAsync(JObject.Parse(jobDetail.ToJsonString()));
-                log.LogInformation($"[job id: {jobId}] upsert success ");
+                //log.LogInformation($"[job id: {jobId}] upsert success ");
+
+                // add some delay, incase jobsdb block me
+                await Task.Delay(Random.Shared.Next(100, 500));
             }
 
             log.LogInformation($"function finised at: {DateTime.Now}");

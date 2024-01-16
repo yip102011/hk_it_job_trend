@@ -36,7 +36,7 @@ namespace hk_it_job_trend_func
         [FunctionName(nameof(JobsdbCrawler))]
         public async Task Run([TimerTrigger("0 0 1 * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
         {
-            log.LogInformation($"function started at: {DateTime.Now}");
+            //log.LogInformation($"function started at: {DateTime.Now}");
 
             // get cosmosdb container
             log.LogInformation("get cosmosdb container");
@@ -79,7 +79,7 @@ namespace hk_it_job_trend_func
                 }
 
                 // add some delay, incase jobsdb block me
-                await Task.Delay(Random.Shared.Next(500, 2000));
+                await Task.Delay(Random.Shared.Next(100, 500));
             }
 
             log.LogInformation($"start upsert job list to cosmosdb, job count: {jobList.Count}");
@@ -89,10 +89,10 @@ namespace hk_it_job_trend_func
 
             // insert into cosmosdb one by one, incase error occur
             foreach (var job in jobList)
-            {
+            {                
                 var upsertJob = JObject.Parse(job.ToJsonString());
 
-                log.LogInformation($"[job id: {upsertJob.Value<string>("id")}] start upsert");
+                //log.LogInformation($"[job id: {upsertJob.Value<string>("id")}] start upsert");
                 await jobsdb_container.UpsertItemAsync(upsertJob);
             }
 
