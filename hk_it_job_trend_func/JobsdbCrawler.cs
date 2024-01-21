@@ -34,7 +34,7 @@ namespace hk_it_job_trend_func
         }
 
         [FunctionName(nameof(JobsdbCrawler))]
-        public async Task Run([TimerTrigger("0 0 1 * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
+        public async Task Run([TimerTrigger("0 0 17 * * *", RunOnStartup = false)] TimerInfo myTimer, ILogger log)
         {
             //log.LogInformation($"function started at: {DateTime.Now}");
 
