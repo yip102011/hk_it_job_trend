@@ -1,0 +1,108 @@
+{
+  "data": {
+    "jobDetails": {
+      "job": {
+        "tracking": {
+          "adProductType": "Premium",
+          "classificationInfo": {
+            "classificationId": "6281",
+            "classification": "Information & Communication Technology",
+            "subClassificationId": "6293",
+            "subClassification": "Networks & Systems Administration",
+            "__typename": "JobTrackingClassificationInfo"
+          },
+          "hasRoleRequirements": false,
+          "isPrivateAdvertiser": false,
+          "locationInfo": {
+            "area": null,
+            "location": null,
+            "locationIds": [
+              "1000142"
+            ],
+            "__typename": "JobTrackingLocationInfo"
+          },
+          "workTypeIds": "242",
+          "postedTime": "2d ago",
+          "__typename": "JobTracking"
+        },
+        "id": "73176597",
+        "title": "Event and Partnership Manager (B2B/ eDM/ MarTech)",
+        "phoneNumber": null,
+        "isExpired": false,
+        "isLinkOut": false,
+        "contactMatches": [],
+        "isVerified": true,
+        "abstract": "\r\nJob Responsibilities:\r\n\r\n Develop and implement regional marketing strategies to achieve business objectives in terms of qualified lead...",
+        "content": "<p>Job Responsibilities:</p><ul><li>Develop and implement regional marketing strategies to achieve business objectives in terms of qualified lead generation and brand awareness</li><li>Co-organize local &amp; overseas B2B marketing events with different technology partners or associations</li><li>Rejuvenate corporate image and strengthen brand awareness in local and SE Asia markets</li><li>Develop fruitful partnership for lead generation and sales-driven activities</li><li>Create professional sales enablement materials for pitching B2B clients</li><li>Liaise and manage vendors or partners to ensure their deliverables are of high quality within budget</li><li>Lead a small team and prepare performance report to management</li><li>Closely collaboration with Sales and Product teams are expected</li></ul><p>Job Requirements:</p><ul><li>At least 5-8 years of working experience in marketing, branding or public relation in technology industry</li><li>Familiar with B2B marketing is a MUST</li><li>Excellent written and verbal skills in both English and Mandarin</li><li>Result-oriented with excellent problem-solving skills</li><li>Good interpersonal and communication skills</li><li>Fast learner, fast mover and eager to grow</li><li>Initiative, detail-minded and responsible</li><li>Enthusiastic in technology products is a plus</li></ul>",
+        "status": "Active",
+        "listedAt": {
+          "label": "2d ago",
+          "__typename": "SeekDateTime"
+        },
+        "salary": null,
+        "shareLink": "https://hk.jobsdb.com/job/73176597?tracking=SHR-WEB-SharedJob-asia-1",
+        "workTypes": {
+          "label": "Full time",
+          "__typename": "JobWorkTypes"
+        },
+        "advertiser": {
+          "id": "61301107",
+          "name": "Radica Systems Limited",
+          "__typename": "Advertiser"
+        },
+        "location": {
+          "label": "Sha Tin District",
+          "__typename": "LocationInfo"
+        },
+        "classifications": [
+          {
+            "label": "Networks & Systems Administration (Information & Communication Technology)",
+            "__typename": "ClassificationInfo"
+          }
+        ],
+        "products": {
+          "branding": {
+            "id": "ef035c18-e5a6-460b-8fe3-3d628e00ba6e.1",
+            "cover": null,
+            "thumbnailCover": null,
+            "logo": {
+              "url": "https://image-service-cdn.seek.com.au/d5c5f7e1401ab7b41242cbb4f72c69e131893424/ee4dce1061f3f616224767ad58cb2fc751b8d2dc",
+              "__typename": "JobProductBrandingImage"
+            },
+            "__typename": "JobProductBranding"
+          },
+          "bullets": [
+            "At least 8-10 years of working experience",
+            "Ability to develop good relationships",
+            "Generate new opportunities independently"
+          ],
+          "questionnaire": null,
+          "video": null,
+          "__typename": "JobProducts"
+        },
+        "__typename": "Job"
+      },
+      "companyReviews": null,
+      "companySearchUrl": "https://hk.jobsdb.com/Radica-Systems-Limited-jobs/at-this-company",
+      "learningInsights": {
+        "analytics": {
+          "title": "Thinking about a career as a Partnerships Manager",
+          "landingPage": "CA Role",
+          "bannerName": "CareerAdviceRoleSearch",
+          "entity": "career",
+          "resultType": "contextual",
+          "encoded": "title:Thinking about a career as a Partnerships Manager;landingPage:CA Role;bannerName:CareerAdviceRoleSearch;entity:career;resultType:contextual"
+        },
+        "content": "<style>\n  .EA097D-a * {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font: inherit;\n    vertical-align: baseline;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  .EA097D-a *,\n  .EA097D-a li:before {\n    font-family: inherit;\n    box-sizing: inherit;\n    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  .EA097D-a {\n    font-family: 'Roboto', 'Helvetica Neue', HelveticaNeue, Helvetica, Arial,\n      sans-serif;\n    font-size: 10px;\n    box-sizing: border-box;\n    min-height: 100%;\n    position: relative;\n  }\n\n  .EA097D-b {\n    font-size: 2.1em;\n    line-height: 1.28571429em;\n    -webkit-transform: translateY(0.26285714em);\n    transform: translateY(0.26285714em);\n    color: #1c1c1c;\n    text-decoration: none;\n    display: block;\n    margin-bottom: 18px;\n  }\n\n  .EA097D-d {\n    margin-bottom: 7px;\n    list-style: none;\n  }\n\n  .EA097D-d li {\n    font-size: 1.6em;\n    line-height: 1.28571429em;\n    -webkit-transform: translateY(0.26285714em);\n    transform: translateY(0.26285714em);\n  }\n\n  .EA097D-d li {\n    color: #1c1c1c;\n    margin-bottom: 9px;\n    margin-left: 17px;\n    list-style: disc;\n  }\n\n  .EA097D-d li:last-child {\n    margin-bottom: 30px;\n  }\n\n  .EA097D-f {\n    font-size: 1.8em;\n    line-height: 45px;\n    border-radius: 2px;\n    background: #fff;\n    width: 160px;\n    color: #2765cf;\n    text-decoration: none;\n    padding: 0 14px;\n    border: 2px solid #2765cf;\n    display: block;\n    text-align: center;\n  }\n\n  .EA097D-h {\n    height: 30px;\n    width: 170px;\n    margin-bottom: 0;\n    background: url(https://cdn.seeklearning.com.au/media/images/career-guide/career-advice-blue.svg)\n      no-repeat center;\n    background-size: contain;\n  }\n\n  @media only screen and (min-width: 580px) {\n    .EA097D-h {\n      margin-bottom: 16px;\n    }\n  }\n</style>\n\n<div class=\"EA097D-a\">\n  <div class=\"EA097D-h\"></div>\n  <h1>\n    <a\n      class=\"EA097D-b\"\n      href=\"https://hk.jobsdb.com/career-advice/role/partnerships-manager?campaigncode=lrn:skj:sklm:cg:jbd:alpha?campaigncode=lrn:skj:sklm:cg:jbd:alpha\"\n      >Thinking about a career as a Partnerships Manager?</a\n    >\n  </h1>\n  <ul class=\"EA097D-d\">\n    <li>Insights on salary & in-demand skills</li>\n    <li>Reviews from people working in the industry</li>\n  </ul>\n  <a class=\"EA097D-f\" href=\"https://hk.jobsdb.com/career-advice/role/partnerships-manager?campaigncode=lrn:skj:sklm:cg:jbd:alpha?campaigncode=lrn:skj:sklm:cg:jbd:alpha\"\n    >Explore career</a\n  >\n</div>\n",
+        "__typename": "LearningInsights"
+      },
+      "companyTags": [],
+      "restrictedApplication": {
+        "label": null,
+        "__typename": "JobDetailsRestrictedApplication"
+      },
+      "sourcr": null,
+      "__typename": "JobDetails"
+    }
+  }
+}

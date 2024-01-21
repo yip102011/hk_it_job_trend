@@ -1,0 +1,2617 @@
+{
+  "data": [
+    {
+      "advertiser": {
+        "id": "61301107",
+        "description": "Radica Systems Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "ef035c18-e5a6-460b-8fe3-3d628e00ba6e.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/ef035c18-e5a6-460b-8fe3-3d628e00ba6e.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/ef035c18-e5a6-460b-8fe3-3d628e00ba6e.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "At least 8-10 years of working experience",
+        "Ability to develop good relationships",
+        "Generate new opportunities independently"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Radica Systems Limited",
+      "companyProfileStructuredDataId": 408634,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Sha Tin District",
+      "locationId": 1000142,
+      "locationWhereValue": "Sha Tin District",
+      "id": 73176597,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Sha Tin District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Sha Tin District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T10:10:27Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "partnerships-manager",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176597",
+        "section": "MAIN",
+        "sectionRank": 33,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6293",
+        "description": "Networks & Systems Administration"
+      },
+      "teaser": "Job Responsibilities:\r\n\r\n Develop and implement regional marketing strategies to achieve business objectives in terms of qualified lead...",
+      "title": "Event and Partnership Manager (B2B/ eDM/ MarTech)",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMSIKfQ==",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61314285",
+        "description": "Wellesley Associates Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "b5376ce0-98d1-400b-9ba5-a0becf3e9469.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/b5376ce0-98d1-400b-9ba5-a0becf3e9469.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/b5376ce0-98d1-400b-9ba5-a0becf3e9469.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "$80K | Attractive bonus | Perm",
+        "NLP | ML | Deep learning",
+        "Keras | Tensorflow | Caffe | Pytorch"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Wellesley Associates Limited",
+      "companyProfileStructuredDataId": 408141,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Hong Kong",
+      "locationId": 24469,
+      "locationWhereValue": "Hong Kong",
+      "id": 73176578,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Hong Kong",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Hong Kong"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T10:09:05Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "engineer",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176578",
+        "section": "MAIN",
+        "sectionRank": 34,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6290",
+        "description": "Engineering - Software"
+      },
+      "teaser": "Responsibilities:\r\nAs a Senior Data Engineer specializing in web scraping and natural language processing, you will be responsible for extracting...",
+      "title": "NLP Engineer - Up to $80K",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMiIKfQ==",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "60230619",
+        "description": "Shangri-La International Hotel Management Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "116388ed-dba9-44fb-bee4-3d6dc5628945.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/116388ed-dba9-44fb-bee4-3d6dc5628945.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/116388ed-dba9-44fb-bee4-3d6dc5628945.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Proficiency in SAS / SQL",
+        "Proficiency in data visualization tools (Tableau)",
+        "CRM Business analysis and insights"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Shangri-la Hotels and Resorts Group",
+      "companyProfileStructuredDataId": 4943,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Quarry Bay",
+      "locationId": 1000169,
+      "locationWhereValue": "Quarry Bay Eastern District",
+      "id": 73176550,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Quarry Bay, Eastern District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Quarry Bay Eastern District"
+          },
+          {
+            "contextualName": "Eastern District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T10:06:51Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "analyst",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176550",
+        "section": "MAIN",
+        "sectionRank": 35,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6283",
+        "description": "Business/Systems Analysts"
+      },
+      "suburb": "Quarry Bay",
+      "suburbId": 1000169,
+      "suburbWhereValue": "Quarry Bay Eastern District",
+      "teaser": "To support our continuous growth plan, we are now looking for a Senior Analyst, CRM &amp; Data Analytics to support our CRM team in Shangri-La...",
+      "title": "Senior Analyst, CRM & Data Analytics",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMyIKfQ==",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "60186303",
+        "description": "IT Solutions Ltd."
+      },
+      "automaticInclusion": false,
+      "bulletPoints": [
+        "Skills set: SQL, IBM DataStage or other ETL Tools",
+        "DW / BI Application Development",
+        "Gain enterprise scale banking system experience"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "IT Solutions Ltd",
+      "companyProfileStructuredDataId": 443410,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Hong Kong",
+      "locationId": 24469,
+      "locationWhereValue": "Hong Kong",
+      "id": 73176516,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Hong Kong",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Hong Kong"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T10:04:52Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176516",
+        "section": "MAIN",
+        "sectionRank": 36,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6290",
+        "description": "Engineering - Software"
+      },
+      "teaser": "We are searching on behalf of a Major Bank for a few high calibre  System\r\n Analysts and Analyst Programmers\r\nto work on interesting Data...",
+      "title": "SQL & DataStage: ETL Data Warehouse SA / AP -  Major Bank",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfNCIKfQ==",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61305075",
+        "description": "Fountain Set (Holdings) Limited"
+      },
+      "automaticInclusion": false,
+      "bulletPoints": [
+        "上市公司、5天工作及雙糧",
+        "文憑或以上學歷程度",
+        "2年工作經驗"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Fountain Set (Holdings) Limited",
+      "companyProfileStructuredDataId": 540568,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Kwai Hing",
+      "locationId": 1000128,
+      "locationWhereValue": "Kwai Hing Kwai Tsing Area",
+      "id": 73176491,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Kwai Hing, Kwai Tsing Area",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Kwai Hing Kwai Tsing Area"
+          },
+          {
+            "contextualName": "Kwai Tsing Area"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T10:03:34Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "project-assistant",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176491",
+        "section": "MAIN",
+        "sectionRank": 37,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6283",
+        "description": "Business/Systems Analysts"
+      },
+      "suburb": "Kwai Hing",
+      "suburbId": 1000128,
+      "suburbWhereValue": "Kwai Hing Kwai Tsing Area",
+      "teaser": "職責 Responsibilities：\r\n\r\n 協助經理處理日常事務 Assist Manager to handle the daily affairs   協助經理組織及安排會議並負責協調工作 Assist Manager in organizing and arranging...",
+      "title": "項目助理 Project Assistant",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfNSIKfQ==",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61398431",
+        "description": "Macroview Telecom Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "70f71513-cdc2-44c5-a807-9d44d9d3ec0d.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/70f71513-cdc2-44c5-a807-9d44d9d3ec0d.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/70f71513-cdc2-44c5-a807-9d44d9d3ec0d.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Focus on Cyber Security Solutions Presales",
+        "Risks, Detection & Response processes",
+        "Minimum 5 years of experience"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Macroview Telecom Limited",
+      "companyProfileStructuredDataId": 408815,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "North Point",
+      "locationId": 1000168,
+      "locationWhereValue": "North Point Eastern District",
+      "id": 73176478,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "North Point, Eastern District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "North Point Eastern District"
+          },
+          {
+            "contextualName": "Eastern District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T10:02:59Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "solutions-consultant",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176478",
+        "section": "MAIN",
+        "sectionRank": 38,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6298",
+        "description": "Team Leaders"
+      },
+      "suburb": "North Point",
+      "suburbId": 1000168,
+      "suburbWhereValue": "North Point Eastern District",
+      "teaser": "How you will contribute:\r\n\r\n Scoping and estimating resources and effort needed to deliver the solutions to the clients successfully and...",
+      "title": "(Senior) Cyber Security Solution Consultant",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfNiIKfQ==",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61389958",
+        "description": "Jupiter Solution Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "8ecd7695-1ab9-4e0f-9c3e-8bbb28937dc9.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/8ecd7695-1ab9-4e0f-9c3e-8bbb28937dc9.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/8ecd7695-1ab9-4e0f-9c3e-8bbb28937dc9.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Flexi working hour;5 days work;Bonus;Study Sponsor",
+        "1.5 hr of Lunch Break;Medical Insurance;B-day Cash",
+        "3 - 5 years’ exp.; system revamp;C#.Net;Reactjs"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Jupiter Solution Limited",
+      "companyProfileStructuredDataId": 679755,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Kwun Tong",
+      "locationId": 1000132,
+      "locationWhereValue": "Kwun Tong Kwun Tong District",
+      "id": 73176413,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Kwun Tong, Kwun Tong District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Kwun Tong Kwun Tong District"
+          },
+          {
+            "contextualName": "Kwun Tong District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:59:48Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "analyst-programmer",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176413",
+        "section": "MAIN",
+        "sectionRank": 39,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6290",
+        "description": "Engineering - Software"
+      },
+      "suburb": "Kwun Tong",
+      "suburbId": 1000132,
+      "suburbWhereValue": "Kwun Tong Kwun Tong District",
+      "teaser": "Responsibilities:\r\n\r\n Design, develop and implementation of web application and system enhancement as well as new project development\r\n Maintain...",
+      "title": "Analyst Programmer",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfNyIKfQ==",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61295767",
+        "description": "Chiyu Banking Corp Ltd"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "fc58b7bd-4837-4b35-bbcf-f0c78d6a49ed.2",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/fc58b7bd-4837-4b35-bbcf-f0c78d6a49ed.2/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/fc58b7bd-4837-4b35-bbcf-f0c78d6a49ed.2/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Chiyu",
+      "companyProfileStructuredDataId": 408302,
+      "displayType": "standard",
+      "listingDateDisplay": "2d ago",
+      "location": "Central",
+      "locationId": 1000155,
+      "locationWhereValue": "Central Central and Western District",
+      "id": 73176405,
+      "isPremium": false,
+      "isStandOut": false,
+      "jobLocation": {
+        "label": "Central, Central and Western District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Central Central and Western District"
+          },
+          {
+            "contextualName": "Central and Western District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:59:09Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "manager",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176405",
+        "section": "MAIN",
+        "sectionRank": 40,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6293",
+        "description": "Networks & Systems Administration"
+      },
+      "suburb": "Central",
+      "suburbId": 1000155,
+      "suburbWhereValue": "Central Central and Western District",
+      "teaser": "Responsibilities:\r\n\r\n\r\n Implement Linux / Windows / Network and infrastructure systems, including setup, support and performance optimizing of...",
+      "title": "System Management Manager",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfOCIKfQ==",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61398431",
+        "description": "Macroview Telecom Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "70f71513-cdc2-44c5-a807-9d44d9d3ec0d.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/70f71513-cdc2-44c5-a807-9d44d9d3ec0d.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/70f71513-cdc2-44c5-a807-9d44d9d3ec0d.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Cyber Security Operation Center",
+        "Risks, Detection & Response processes",
+        "Technology or Cybersecurity Industry"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Macroview Telecom Limited",
+      "companyProfileStructuredDataId": 408815,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "North Point",
+      "locationId": 1000168,
+      "locationWhereValue": "North Point Eastern District",
+      "id": 73176345,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "North Point, Eastern District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "North Point Eastern District"
+          },
+          {
+            "contextualName": "Eastern District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:56:38Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176345",
+        "section": "MAIN",
+        "sectionRank": 41,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6295",
+        "description": "Programme & Project Management"
+      },
+      "suburb": "North Point",
+      "suburbId": 1000168,
+      "suburbWhereValue": "North Point Eastern District",
+      "teaser": "Responsibilities:\r\n\r\n Serve as the primary point of contact for assigned clients, building strong relationships and trust with key...",
+      "title": "Security Analysis (SOC - Tier 2 or 3)",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfOSIKfQ==",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "60186303",
+        "description": "IT Solutions Ltd."
+      },
+      "automaticInclusion": false,
+      "bulletPoints": [
+        "Corporate e-banking System Project Management",
+        "Work on system and spec review",
+        "Good career prospect in a Major Bank"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "IT Solutions Ltd",
+      "companyProfileStructuredDataId": 443410,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Hong Kong",
+      "locationId": 24469,
+      "locationWhereValue": "Hong Kong",
+      "id": 73176325,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Hong Kong",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Hong Kong"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:55:39Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "System-Development-Manager",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176325",
+        "section": "MAIN",
+        "sectionRank": 42,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6290",
+        "description": "Engineering - Software"
+      },
+      "teaser": "We are searching on behalf of a Major Bank for a number of high-calibre\r\nJava System Development Manager and Systems Analyst to work on Corporate...",
+      "title": "Corporate e-Banking System: Java System Development Manager / SA - Major Bank",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMTAiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61404280",
+        "description": "A.S. Watson Industries"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "4815df0d-816e-42c9-a77d-dcd67fa75673.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/4815df0d-816e-42c9-a77d-dcd67fa75673.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/4815df0d-816e-42c9-a77d-dcd67fa75673.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Dynamic Working Environment in an Energetic Team",
+        "5 Days Work, Free Shuttle Bus, Discretionary Bonus",
+        "ERP & system integration technologies"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "A.S. Watson Group",
+      "companyProfileStructuredDataId": 393766,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Tai Po District",
+      "locationId": 1000143,
+      "locationWhereValue": "Tai Po District",
+      "id": 73176314,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Tai Po District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Tai Po District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:55:07Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "systems-analyst",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176314",
+        "section": "MAIN",
+        "sectionRank": 43,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6290",
+        "description": "Engineering - Software"
+      },
+      "teaser": "Come and Join Us!\r\nWhy Should You Join Us?\r\nAt\r\nWatsons Water, we believe in our people, in teamwork and the importance of your personal growth....",
+      "title": "System Analyst",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMTEiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61273323",
+        "description": "Chinachem Group"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "ae55ede9-14a0-4efe-a51c-4906aa4afac3.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/ae55ede9-14a0-4efe-a51c-4906aa4afac3.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/ae55ede9-14a0-4efe-a51c-4906aa4afac3.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Deal screening and industry/sector research",
+        "Construct financial models",
+        "Monitor the ongoing assets / portfolio performance"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Chinachem Group",
+      "companyProfileStructuredDataId": 408345,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Tsuen Wan District",
+      "locationId": 1000144,
+      "locationWhereValue": "Tsuen Wan District",
+      "id": 73176281,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Tsuen Wan District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Tsuen Wan District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:53:29Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "manager-real-estate",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176281",
+        "section": "MAIN",
+        "sectionRank": 44,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6283",
+        "description": "Business/Systems Analysts"
+      },
+      "teaser": "Responsibilities: \r\n\r\n Deal Screening and Industry/Sector Research – evaluate potential real estate investment opportunities, collect and...",
+      "title": "Assistant Manager - Real Estate Investment",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMTIiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61325747",
+        "description": "Odoo Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "9e1192c6-d182-45a5-936e-208be4d62be7.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/9e1192c6-d182-45a5-936e-208be4d62be7.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/9e1192c6-d182-45a5-936e-208be4d62be7.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Business Analysis",
+        "Project Management",
+        "Dynamic and multinational environment"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Odoo Limited",
+      "companyProfileStructuredDataId": 408149,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Sai Ying Pun",
+      "locationId": 1000157,
+      "locationWhereValue": "Sai Ying Pun Central and Western District",
+      "id": 73176258,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Sai Ying Pun, Central and Western District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Sai Ying Pun Central and Western District"
+          },
+          {
+            "contextualName": "Central and Western District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:52:16Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "business-analyst",
+      "salary": "$25,000 – $34,999 per month",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176258",
+        "section": "MAIN",
+        "sectionRank": 45,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6283",
+        "description": "Business/Systems Analysts"
+      },
+      "suburb": "Sai Ying Pun",
+      "suburbId": 1000157,
+      "suburbWhereValue": "Sai Ying Pun Central and Western District",
+      "teaser": "Join a vibrant and innovative team, working within an organization that values independence, flexibility and personal\r\n growth. We are looking...",
+      "title": "Business Analyst (APAC) - Cantonese or Burmese speakers required",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMTMiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61276617",
+        "description": "Mead Johnson Nutrition (Hong Kong) Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "6d81455e-833c-4cac-92bc-9dbdfd37ef34.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/6d81455e-833c-4cac-92bc-9dbdfd37ef34.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/6d81455e-833c-4cac-92bc-9dbdfd37ef34.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Leading infant formula product company",
+        "Provide day-to-day L1 & L2 system support",
+        "Flexible working hours, WFH, extra leaves"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Mead Johnson",
+      "companyProfileStructuredDataId": 385593,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Wan Chai District",
+      "locationId": 1000150,
+      "locationWhereValue": "Wan Chai District",
+      "id": 73176096,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Wan Chai District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Wan Chai District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:44:13Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "applications-analyst",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176096",
+        "section": "MAIN",
+        "sectionRank": 46,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6290",
+        "description": "Engineering - Software"
+      },
+      "teaser": "Job duties:\r\n\r\n\r\n Provide day-to-day L1 &amp; L2 system support and troubleshoot system issues reported by HK &amp; TW users\r\n Collaborate with...",
+      "title": "Technical Application Analyst/ System Support (1-year contract)",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMTQiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61277944",
+        "description": "Global Logistics System (HK) Co Ltd"
+      },
+      "area": "Lantau Island",
+      "areaId": 1000134,
+      "areaWhereValue": "Lantau Island Islands District",
+      "automaticInclusion": false,
+      "branding": {
+        "id": "1ad0289e-3c0d-4abc-ab6f-88007cfb8272.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/1ad0289e-3c0d-4abc-ab6f-88007cfb8272.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/1ad0289e-3c0d-4abc-ab6f-88007cfb8272.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "GLSHK - IT Expert in Global Air Cargo Solutions",
+        "5 days, 0900-1730, Flexible Working, Sports Centre",
+        "Birthday Leave, Life, Dental, (Family) Medical"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Global Logistics System",
+      "companyProfileStructuredDataId": 453256,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Airport Area",
+      "locationId": 1000120,
+      "locationWhereValue": "Airport Area Islands District",
+      "id": 73176095,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Airport Area, Islands District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Airport Area Islands District"
+          },
+          {
+            "contextualName": "Islands District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:44:07Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "quality-assurance-analyst",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176095",
+        "section": "MAIN",
+        "sectionRank": 47,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6290",
+        "description": "Engineering - Software"
+      },
+      "suburb": "Airport Area",
+      "suburbId": 1000120,
+      "suburbWhereValue": "Airport Area Islands District",
+      "teaser": "Job Responsibilities:\r\n\r\n Analyze and review products’ quality and system performance proactively\r\n Responsible for day-to-day test preparation...",
+      "title": "Quality Assurance Analyst (5-Day Work)",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMTUiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "60178592",
+        "description": "Maxim's Caterers Ltd"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "a384e005-174e-4f63-abb2-e948278e9e36.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/a384e005-174e-4f63-abb2-e948278e9e36.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/a384e005-174e-4f63-abb2-e948278e9e36.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Optimization of supply chain processes",
+        "Knowledge of business intelligence and analytics",
+        "Work closely with other HQ functions"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Maxim's Caterers Ltd",
+      "companyProfileStructuredDataId": 408556,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Hong Kong",
+      "locationId": 24469,
+      "locationWhereValue": "Hong Kong",
+      "id": 73176060,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Hong Kong",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Hong Kong"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:42:30Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "assistant-manager",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176060",
+        "section": "MAIN",
+        "sectionRank": 48,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6283",
+        "description": "Business/Systems Analysts"
+      },
+      "teaser": "Responsibilities\r\n\r\n Develop and implement process improvement projects with cross functional units among supply chain, other functional...",
+      "title": "Assistant Manager, Business Process Analytics (Supply Chain)",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMTYiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "60283084",
+        "description": "China Construction Bank (Asia) Corporation Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "564d2d19-9d16-4c37-8c2e-09f8422210df.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/564d2d19-9d16-4c37-8c2e-09f8422210df.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/564d2d19-9d16-4c37-8c2e-09f8422210df.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Solid experience in trade surveillance monitoring",
+        "Minimum 5 years working experience",
+        "Degree holder or above"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "China Construction Bank",
+      "companyProfileStructuredDataId": 17596,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Kowloon Bay",
+      "locationId": 1000131,
+      "locationWhereValue": "Kowloon Bay Kwun Tong District",
+      "id": 73176002,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Kowloon Bay, Kwun Tong District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Kowloon Bay Kwun Tong District"
+          },
+          {
+            "contextualName": "Kwun Tong District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:40:22Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "specialist",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73176002",
+        "section": "MAIN",
+        "sectionRank": 49,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6283",
+        "description": "Business/Systems Analysts"
+      },
+      "suburb": "Kowloon Bay",
+      "suburbId": 1000131,
+      "suburbWhereValue": "Kowloon Bay Kwun Tong District",
+      "teaser": "Main Responsibilities\r\n\r\n\r\n\r\n\r\n Perform real-time and post-trade control through trade surveillance system.\r\n Perform surveillance of...",
+      "title": "Trade Surveillance Specialist, Securities Service",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMTciCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61358750",
+        "description": "YOOV  Internet Technology Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "ad014545-3f2e-4a5a-a157-98e987f89d98.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/ad014545-3f2e-4a5a-a157-98e987f89d98.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/ad014545-3f2e-4a5a-a157-98e987f89d98.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "System Implementation, Solution Analysis, UAT",
+        "Project base, Business Analysis, User requirements",
+        "Fast Growing IT Company"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "YOOV Internet Technology Limited",
+      "companyProfileStructuredDataId": 541427,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Kwun Tong",
+      "locationId": 1000132,
+      "locationWhereValue": "Kwun Tong Kwun Tong District",
+      "id": 73175989,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Kwun Tong, Kwun Tong District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Kwun Tong Kwun Tong District"
+          },
+          {
+            "contextualName": "Kwun Tong District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:39:59Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "solutions-analyst",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73175989",
+        "section": "MAIN",
+        "sectionRank": 50,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6290",
+        "description": "Engineering - Software"
+      },
+      "suburb": "Kwun Tong",
+      "suburbId": 1000132,
+      "suburbWhereValue": "Kwun Tong Kwun Tong District",
+      "teaser": "Responsibilities:\r\n\r\n Collaborate with cross-functional teams to understand business requirements and translate them into effective application...",
+      "title": "Junior Solution Analyst (5-day work/ Good Career Prospect)",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMTgiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61276596",
+        "description": "We Software Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "c314812f-123c-416f-8f6d-9be6c64e2c9a.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/c314812f-123c-416f-8f6d-9be6c64e2c9a.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/c314812f-123c-416f-8f6d-9be6c64e2c9a.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Attractive Remuneration Package",
+        "Mon - Fri, 5 days per week",
+        "2+ years of experience in IT related service"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "We Software Limited",
+      "companyProfileStructuredDataId": 532583,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Hong Kong",
+      "locationId": 24469,
+      "locationWhereValue": "Hong Kong",
+      "id": 73175811,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Hong Kong",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Hong Kong"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:37:13Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "quality-assurance-engineer",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73175811",
+        "section": "MAIN",
+        "sectionRank": 51,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6290",
+        "description": "Engineering - Software"
+      },
+      "teaser": "Responsibilities:\r\nQuality Assurance and Testing\r\n\r\n Conduct systematic and functional test for different software system/web applications/mobile...",
+      "title": "QA Engineer",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMTkiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61274060",
+        "description": "Shanghai Commercial Bank Ltd"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "e3b533bc-f8a7-485d-ad2a-50cf766f332d.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/e3b533bc-f8a7-485d-ad2a-50cf766f332d.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/e3b533bc-f8a7-485d-ad2a-50cf766f332d.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Backup and restoration",
+        "Troubleshooting and performance tuning",
+        "Monitoring and capacity planning"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Shanghai Commercial Bank",
+      "companyProfileStructuredDataId": 408103,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Kwai Hing",
+      "locationId": 1000128,
+      "locationWhereValue": "Kwai Hing Kwai Tsing Area",
+      "id": 73175681,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Kwai Hing, Kwai Tsing Area",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Kwai Hing Kwai Tsing Area"
+          },
+          {
+            "contextualName": "Kwai Tsing Area"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:35:02Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "database-administrator",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73175681",
+        "section": "MAIN",
+        "sectionRank": 52,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6293",
+        "description": "Networks & Systems Administration"
+      },
+      "suburb": "Kwai Hing",
+      "suburbId": 1000128,
+      "suburbWhereValue": "Kwai Hing Kwai Tsing Area",
+      "teaser": "Responsibilities:\r\n\r\n Administration, maintenance, configuration, installation and support of databases\r\n Backup and restoration, troubleshooting...",
+      "title": "Database Administrator",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMjAiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61274060",
+        "description": "Shanghai Commercial Bank Ltd"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "e3b533bc-f8a7-485d-ad2a-50cf766f332d.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/e3b533bc-f8a7-485d-ad2a-50cf766f332d.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/e3b533bc-f8a7-485d-ad2a-50cf766f332d.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Perform system analyses, design, testing, deve.",
+        "e-banking related systems (Mobile/Internet App)",
+        "Operational efficiency systems (e.g. Robotic/AI)"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Shanghai Commercial Bank",
+      "companyProfileStructuredDataId": 408103,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Kwai Hing",
+      "locationId": 1000128,
+      "locationWhereValue": "Kwai Hing Kwai Tsing Area",
+      "id": 73175557,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Kwai Hing, Kwai Tsing Area",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Kwai Hing Kwai Tsing Area"
+          },
+          {
+            "contextualName": "Kwai Tsing Area"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:33:19Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "analyst-programmer",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73175557",
+        "section": "MAIN",
+        "sectionRank": 53,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6293",
+        "description": "Networks & Systems Administration"
+      },
+      "suburb": "Kwai Hing",
+      "suburbId": 1000128,
+      "suburbWhereValue": "Kwai Hing Kwai Tsing Area",
+      "teaser": "Responsibilities:\r\n\r\n Work closely with Product Owners to deliver technology solutions so as to achieve established strategic digital...",
+      "title": "System Analyst / Analyst Programmer / Programmer (Digital & Fintech)",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMjEiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61297501",
+        "description": "Microware Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "55497346-abe2-495a-bd8d-a51a3bd17571.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/55497346-abe2-495a-bd8d-a51a3bd17571.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/55497346-abe2-495a-bd8d-a51a3bd17571.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "New Join Bonus $6K !!!",
+        "Education subsidy",
+        "Birthday leave & Family care leave"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Microware Limited",
+      "companyProfileStructuredDataId": 408252,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Hong Kong",
+      "locationId": 24469,
+      "locationWhereValue": "Hong Kong",
+      "id": 73175331,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Hong Kong",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Hong Kong"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:31:13Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "network-engineer",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73175331",
+        "section": "MAIN",
+        "sectionRank": 54,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6293",
+        "description": "Networks & Systems Administration"
+      },
+      "teaser": "Job Description:\r\n\r\n Understand, analyze customer requirements for deploying to achieve solution requirement.\r\n Strong knowledge of Symantec...",
+      "title": "Senior Network Engineer / Network Engineer",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMjIiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61344537",
+        "description": "Beehire Personnel Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "b4a19099-673e-4506-81e4-eb0c5bba3594.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/b4a19099-673e-4506-81e4-eb0c5bba3594.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/b4a19099-673e-4506-81e4-eb0c5bba3594.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Well-known company with friendly teammate",
+        "Up to HKD $70k with bonus",
+        "Work-life Balance, NO OT"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Beehire Personnel Limited",
+      "companyProfileStructuredDataId": 449817,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Wan Chai District",
+      "locationId": 1000150,
+      "locationWhereValue": "Wan Chai District",
+      "id": 73175092,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Wan Chai District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Wan Chai District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:29:35Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "solutions-consultant",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73175092",
+        "section": "MAIN",
+        "sectionRank": 55,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6289",
+        "description": "Engineering - Network"
+      },
+      "teaser": "Our multinational corporation (MNC) client is seeking a Solution Consultant for their pre-sales team in the areas of Information Security or...",
+      "title": "MNC, Solution Consultant (Security / Cloud)",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMjMiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61340750",
+        "description": "Hong Kong Sino Bridge Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "3538d3f9-a045-4e90-a13b-3ba59227dea6.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/3538d3f9-a045-4e90-a13b-3ba59227dea6.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/3538d3f9-a045-4e90-a13b-3ba59227dea6.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Degree holder or above in Computer related",
+        "5+ experience in system integration implementation",
+        "English and Chinese (Mandarin&Cantonese)"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyProfileStructuredDataId": 0,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Tsuen Wan District",
+      "locationId": 1000144,
+      "locationWhereValue": "Tsuen Wan District",
+      "id": 73175075,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Tsuen Wan District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Tsuen Wan District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:29:23Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "network-engineer",
+      "salary": "$30,000 – $44,999 per month",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73175075",
+        "section": "MAIN",
+        "sectionRank": 56,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6293",
+        "description": "Networks & Systems Administration"
+      },
+      "teaser": "Roles &amp; Responsibilities\r\n\r\n Support company’s information technology service business development.  支持公司IT服務業務發展  \r\n\r\n Technical support for...",
+      "title": "Project Engineer(Network&System)",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMjQiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61309314",
+        "description": "Global Executive Consultants Ltd."
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "ccc17258-7546-4b69-b833-550f2b8a68dd.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/ccc17258-7546-4b69-b833-550f2b8a68dd.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/ccc17258-7546-4b69-b833-550f2b8a68dd.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Structured Cabling Infrastructure",
+        "Data Center",
+        "Good communication and vendor management"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Global Executive",
+      "companyProfileStructuredDataId": 408173,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Hong Kong",
+      "locationId": 24469,
+      "locationWhereValue": "Hong Kong",
+      "id": 73174748,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Hong Kong",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Hong Kong"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:26:55Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "specialist",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73174748",
+        "section": "MAIN",
+        "sectionRank": 57,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6288",
+        "description": "Engineering - Hardware"
+      },
+      "teaser": "Our client is looking for high-caliber person to fill the position. \r\nResponsibilities:-\r\n\r\n Responsible for operating, supporting and...",
+      "title": "Data Center Specialist (Cabling Infrastructure) (HK$50K - $70K) (Ref. No.:...",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMjUiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61277796",
+        "description": "Broadway Photo Supply Ltd"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "9cb440c0-346c-4c34-a966-684dc07d517d.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/9cb440c0-346c-4c34-a966-684dc07d517d.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/9cb440c0-346c-4c34-a966-684dc07d517d.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Career advancement opportunities",
+        "Good fringe benefit with stable environment",
+        "Participate in diversified projects"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Broadway Photo Supply Ltd",
+      "companyProfileStructuredDataId": 409121,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Kwun Tong",
+      "locationId": 1000132,
+      "locationWhereValue": "Kwun Tong Kwun Tong District",
+      "id": 73174386,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Kwun Tong, Kwun Tong District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Kwun Tong Kwun Tong District"
+          },
+          {
+            "contextualName": "Kwun Tong District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:22:30Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "programmer",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73174386",
+        "section": "MAIN",
+        "sectionRank": 58,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6290",
+        "description": "Engineering - Software"
+      },
+      "suburb": "Kwun Tong",
+      "suburbId": 1000132,
+      "suburbWhereValue": "Kwun Tong Kwun Tong District",
+      "teaser": "Responsibilities:\r\n\r\n Participate in designing and developing both web-based and client-based application projects\r\n Provide system support and...",
+      "title": "Programmer",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMjYiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "60217087",
+        "description": "ADECCO Personnel Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "1e26d5f1-8757-4d88-aeca-67bebedc8f55.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/1e26d5f1-8757-4d88-aeca-67bebedc8f55.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/1e26d5f1-8757-4d88-aeca-67bebedc8f55.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "In-house role",
+        "Competitve Salary Package",
+        "ERP Epicor"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Adecco",
+      "companyProfileStructuredDataId": 3573,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Central and Western District",
+      "locationId": 1000153,
+      "locationWhereValue": "Central and Western District",
+      "id": 73174344,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Central and Western District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Central and Western District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:21:16Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "information-technology-manager",
+      "salary": "$55,000 – $69,999 per month",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73174344",
+        "section": "MAIN",
+        "sectionRank": 59,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6292",
+        "description": "Management"
+      },
+      "teaser": "Our client is a leading Manufacturing Company, and now looking for a Senior IT Manager with ERP implementation experience to lead their Program and...",
+      "title": "Senior IT Manager- ERP Solutions",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMjciCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "62209704",
+        "description": "ADECCO Personnel Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "85712223-411b-43ed-9ad3-50d092f83423.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/85712223-411b-43ed-9ad3-50d092f83423.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/85712223-411b-43ed-9ad3-50d092f83423.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "UI/UX design for web & mobile products",
+        "Experience using Figma",
+        "Excellent working envrionment"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Adecco",
+      "companyProfileStructuredDataId": 3573,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Hung Hom",
+      "locationId": 1000123,
+      "locationWhereValue": "Hung Hom Kowloon City District",
+      "id": 73174292,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Hung Hom, Kowloon City District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Hung Hom Kowloon City District"
+          },
+          {
+            "contextualName": "Kowloon City District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:19:51Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "ux--ui-designer",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73174292",
+        "section": "MAIN",
+        "sectionRank": 60,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6290",
+        "description": "Engineering - Software"
+      },
+      "suburb": "Hung Hom",
+      "suburbId": 1000123,
+      "suburbWhereValue": "Hung Hom Kowloon City District",
+      "teaser": "Our client is a developing tech corporation in Hong Kong, they are looking for a UI/UX Developer with frontend design and development...",
+      "title": "UI/UX Designer (Up to 23k) Commercial sector project, remunerative package",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMjgiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "60284856",
+        "description": "Hong Kong Internet Registration Corporation Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "63c47b71-cad2-4ed7-a394-7a804dbdf944.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/63c47b71-cad2-4ed7-a394-7a804dbdf944.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/63c47b71-cad2-4ed7-a394-7a804dbdf944.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Cybersecurity initiatives for HK industry",
+        "Presentation and training skills",
+        "CISA, CISSP, CISM are advantages"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Hong Kong Internet Registration Corporation Limited",
+      "companyProfileStructuredDataId": 466549,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Southern District",
+      "locationId": 1000175,
+      "locationWhereValue": "Southern District",
+      "id": 73174264,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Southern District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Southern District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:18:58Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "cyber-security-manager",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73174264",
+        "section": "MAIN",
+        "sectionRank": 61,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6293",
+        "description": "Networks & Systems Administration"
+      },
+      "teaser": "Responsibilities: \r\n\r\n Design and implement cyber security initiatives for HK industry and individual company.\r\n Meeting with external...",
+      "title": "Assistant Cyber Security Manager",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMjkiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "60252223",
+        "description": "Heep Hong Society"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "356ac14e-e955-4167-a2a0-5d99519b3e44.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/356ac14e-e955-4167-a2a0-5d99519b3e44.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/356ac14e-e955-4167-a2a0-5d99519b3e44.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Analyse & manage proj. priorities, strategy, risk",
+        "Deg. in Computer Science, IT/Information System",
+        "Min. 10+ yrs' exp. in project & vendor management"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Heep Hong Society",
+      "companyProfileStructuredDataId": 408163,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Ngau Tau Kok",
+      "locationId": 1000133,
+      "locationWhereValue": "Ngau Tau Kok Kwun Tong District",
+      "id": 73174158,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Ngau Tau Kok, Kwun Tong District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Ngau Tau Kok Kwun Tong District"
+          },
+          {
+            "contextualName": "Kwun Tong District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:17:42Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "Project-Management-Manager",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73174158",
+        "section": "MAIN",
+        "sectionRank": 62,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6295",
+        "description": "Programme & Project Management"
+      },
+      "suburb": "Ngau Tau Kok",
+      "suburbId": 1000133,
+      "suburbWhereValue": "Ngau Tau Kok Kwun Tong District",
+      "teaser": "Responsibilities:\r\n\r\n Align &amp; maintain the project portfolio priorities &amp; strategic visions with the senior management team;\r\n Lead and...",
+      "title": "Manager, Project Management Office",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMzAiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "61343700",
+        "description": "APAC Solution Corporation Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "be8df3e9-51e9-4b34-b63c-9b45d3d1055b.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/be8df3e9-51e9-4b34-b63c-9b45d3d1055b.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/be8df3e9-51e9-4b34-b63c-9b45d3d1055b.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Provide help desk support (Field work is required)",
+        "Familiar with helpdesk software and remote control",
+        "Immediate available is highly preferred"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyProfileStructuredDataId": 0,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Kowloon Bay",
+      "locationId": 1000131,
+      "locationWhereValue": "Kowloon Bay Kwun Tong District",
+      "id": 73174139,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Kowloon Bay, Kwun Tong District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Kowloon Bay Kwun Tong District"
+          },
+          {
+            "contextualName": "Kwun Tong District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:16:50Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "Technical-Support-Assistant",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73174139",
+        "section": "MAIN",
+        "sectionRank": 63,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6288",
+        "description": "Engineering - Hardware"
+      },
+      "suburb": "Kowloon Bay",
+      "suburbId": 1000131,
+      "suburbWhereValue": "Kowloon Bay Kwun Tong District",
+      "teaser": "Job Responsibilities:\r\n\r\n\r\n Assist in PC equipment procurement, installation and setup of hardware and software, including user account setup...",
+      "title": "Technical Support Assistant / 技術支援助理",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMzEiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    },
+    {
+      "advertiser": {
+        "id": "60527276",
+        "description": "Colliers International (Hong Kong) Limited"
+      },
+      "automaticInclusion": false,
+      "branding": {
+        "id": "7004af90-4e31-497b-9084-4260cf4e498e.1",
+        "assets": {
+          "logo": {
+            "strategies": {
+              "jdpLogo": "https://bx-branding-gateway.cloud.seek.com.au/7004af90-4e31-497b-9084-4260cf4e498e.1/jdpLogo",
+              "serpLogo": "https://bx-branding-gateway.cloud.seek.com.au/7004af90-4e31-497b-9084-4260cf4e498e.1/serpLogo"
+            }
+          }
+        }
+      },
+      "bulletPoints": [
+        "Regional data infrastructure management",
+        "Multinational company, dynamic working culture",
+        "Competitive benefits and wellness package"
+      ],
+      "classification": {
+        "id": "6281",
+        "description": "Information & Communication Technology"
+      },
+      "companyName": "Colliers",
+      "companyProfileStructuredDataId": 5071,
+      "displayStyle": {
+        "search": "A"
+      },
+      "displayType": "standout",
+      "listingDateDisplay": "2d ago",
+      "location": "Wan Chai",
+      "locationId": 1000152,
+      "locationWhereValue": "Wan Chai Wan Chai District",
+      "id": 73174045,
+      "isPremium": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "label": "Wan Chai, Wan Chai District",
+        "countryCode": "HK",
+        "seoHierarchy": [
+          {
+            "contextualName": "Wan Chai Wan Chai District"
+          },
+          {
+            "contextualName": "Wan Chai District"
+          }
+        ]
+      },
+      "listingDate": "2024-01-19T09:12:48Z",
+      "logo": {
+        "id": "",
+        "description": null
+      },
+      "roleId": "service-manager_2",
+      "salary": "",
+      "solMetadata": {
+        "searchRequestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+        "jobId": "73174045",
+        "section": "MAIN",
+        "sectionRank": 64,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_159",
+          "mordor__s": "0"
+        }
+      },
+      "subClassification": {
+        "id": "6293",
+        "description": "Networks & Systems Administration"
+      },
+      "suburb": "Wan Chai",
+      "suburbId": 1000152,
+      "suburbWhereValue": "Wan Chai Wan Chai District",
+      "teaser": "This is a regional role covering Colliers Asian office locations, reporting to the Senior Associate Director | Information &amp; Technology Asia...",
+      "title": "Data Center and Cloud Services Manager / Administrator",
+      "tracking": "ewogICJ0b2tlbiI6ICIwM2I5MWNlZi01YmY0LTQzZjQtOTViOC00OGQ4MTI0Njk5NzFfMzIiCn0=",
+      "workType": "Full time",
+      "isPrivateAdvertiser": false
+    }
+  ],
+  "title": "Other, , Testing & Quality Assurance, Telecommunications, Technical Writing, Security, Team Leaders, Sales - Pre & Post, Programme & Project Management, Product Management & Development, Networks & Systems Administration, Management, Engineering - Software, Engineering - Network, Engineering - Hardware, Developers/Programmers, Database Development & Administration, Consultants, Business/Systems Analysts, ,  Jobs",
+  "totalCount": 3494,
+  "totalPages": 110,
+  "paginationParameters": {
+    "seekSelectAllPages": true,
+    "hadPremiumListings": false
+  },
+  "info": {
+    "timeTaken": 18,
+    "source": "JobSearch-sm",
+    "experiment": "mordor_159"
+  },
+  "userQueryId": "77f73545c718047c262e0c4d24806931-5342072",
+  "sortMode": [
+    {
+      "isActive": false,
+      "name": "Relevance",
+      "value": "KeywordRelevance"
+    },
+    {
+      "isActive": true,
+      "name": "Date",
+      "value": "ListedDate"
+    }
+  ],
+  "solMetadata": {
+    "requestToken": "ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+    "token": "0~ec3c85d0-c6f2-4028-9b1e-2710e89bcd2b",
+    "sortMode": "DATE",
+    "categories": [
+      "6303",
+      "6302",
+      "6301",
+      "6300",
+      "6299",
+      "6297",
+      "6298",
+      "6296",
+      "6295",
+      "6294",
+      "6293",
+      "6292",
+      "6290",
+      "6289",
+      "6288",
+      "6287",
+      "6286",
+      "6285",
+      "6283",
+      "6282",
+      "6284"
+    ],
+    "pageSize": 32,
+    "pageNumber": 2,
+    "totalJobCount": 3494,
+    "tags": {
+      "mordor:searchMarket": "UNIFIED_HK",
+      "mordor:result_count_rst": "3494",
+      "mordor:result_count_vec": "0",
+      "mordor:rt": "6",
+      "mordor:count_vec": "0",
+      "mordor__flights": "mordor_159",
+      "mordor:count_rst": "3494",
+      "mordor:count_ir": "0",
+      "mordor:result_count_ir": "0",
+      "chalice-search-api:solId": "b7ffa1b6-0cae-4749-9fff-b311300739d6"
+    }
+  },
+  "joraCrossLink": {
+    "canCrossLink": false
+  },
+  "searchParams": {
+    "sitekey": "HK-Main",
+    "sourcesystem": "houston",
+    "userqueryid": "77f73545c718047c262e0c4d24806931-5342072",
+    "userid": "34fdb779-2485-45c6-a758-8b7019a4c413",
+    "usersessionid": "34fdb779-2485-45c6-a758-8b7019a4c413",
+    "eventcapturesessionid": "34fdb779-2485-45c6-a758-8b7019a4c413",
+    "page": "2",
+    "seekselectallpages": "true",
+    "classification": "6281",
+    "subclassification": "6303,6302,6301,6300,6299,6297,6298,6296,6295,6294,6293,6292,6290,6289,6288,6287,6286,6285,6283,6282,6284",
+    "sortmode": "ListedDate",
+    "pagesize": "30",
+    "include": "seodata",
+    "locale": "en-HK",
+    "solid": "b7ffa1b6-0cae-4749-9fff-b311300739d6"
+  }
+}

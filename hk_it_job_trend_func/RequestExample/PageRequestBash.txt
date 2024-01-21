@@ -1,0 +1,43 @@
+curl 'https://hk.jobsdb.com/api/chalice-search/v4/search?siteKey=HK-Main&sourcesystem=houston&userqueryid=77f73545c718047c262e0c4d24806931-5342072&userid=34fdb779-2485-45c6-a758-8b7019a4c413&usersessionid=34fdb779-2485-45c6-a758-8b7019a4c413&eventCaptureSessionId=34fdb779-2485-45c6-a758-8b7019a4c413&page=2&seekSelectAllPages=true&classification=6281&subclassification=6303,6302,6301,6300,6299,6297,6298,6296,6295,6294,6293,6292,6290,6289,6288,6287,6286,6285,6283,6282,6284&sortmode=ListedDate&pageSize=30&include=seodata&locale=en-HK&solId=b7ffa1b6-0cae-4749-9fff-b311300739d6' \
+  -H 'authority: hk.jobsdb.com' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: zh-TW,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \
+  -H 'cache-control: no-cache' \
+  -H 'cookie: JobseekerSessionId=34fdb779-2485-45c6-a758-8b7019a4c413; JobseekerVisitorId=34fdb779-2485-45c6-a758-8b7019a4c413; sol_id=b7ffa1b6-0cae-4749-9fff-b311300739d6; da_cdt=visid_018d2e033eef0096b25c73d97b980507d001607500bd0-sesid_1705873981167; da_sa_candi_sid=1705873981167; _hjSessionUser_337118=eyJpZCI6Ijc4YTMxMzI4LTdkY2EtNWJhMy1hYmRkLTE2M2U0MGRhMDM1OSIsImNyZWF0ZWQiOjE3MDU4NzM5ODIyNzIsImV4aXN0aW5nIjpmYWxzZX0=; _hjIncludedInSessionSample_337118=0; _hjSession_337118=eyJpZCI6ImQ0MjdlM2MxLTBmMzgtNGVkNC1hYTI3LTZkZTQ5NWQxNThmMyIsImMiOjE3MDU4NzM5ODIyNzMsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MH0=; _hjHasCachedUserAttributes=true; _gcl_au=1.1.1566695071.1705873982; ajs_anonymous_id=cdd71c57afa5e2b81f0b19763105da6d; _ga=GA1.2.746399337.1705873982; _gid=GA1.2.1134719965.1705873998; sol_id=b7ffa1b6-0cae-4749-9fff-b311300739d6; da_searchTerm=undefined; __cf_bm=oIMbSLRPujFHUKZuFtqUhOXx9G.1xdoiSdbQ.Ln8ETM-1705874978-1-ARDttL16gPrs4b6rvMxFRe87E5zoWXticRtZyztpBuRyKPkZKrS/GxkPYCXWKAn0jhOYMZYutJDWQuBacvo6tps=; main=V%7C2~P%7Cjobsearch~I%7C6281~O%7C6303%2C6302%2C6301%2C6300%2C6299%2C6297%2C6298%2C6296%2C6295%2C6294%2C6293%2C6292%2C6290%2C6289%2C6288%2C6287%2C6286%2C6285%2C6283%2C6282%2C6284~SORT%7CListedDate~N%7C3~OSF%7Cquick&set=1705875280936/V%7C2~P%7Cjobsearch~I%7C6281%2C6163~SORT%7CListedDate~N%7C3~OSF%7Cquick&set=1705875123134/V%7C2~P%7Cjobsearch~I%7C6281%2C1209~SORT%7CListedDate~N%7C3~OSF%7Cquick&set=1705875101366; _dd_s=rum=0&expire=1705876241439; utag_main=v_id:018d2e033eef0096b25c73d97b980507d001607500bd0$_sn:1$_se:67$_ss:0$_st:1705877141500$ses_id:1705873981167%3Bexp-session$_pn:2%3Bexp-session$dc_visit:1$dc_event:66%3Bexp-session$dc_region:ap-east-1%3Bexp-session; _ga_CDEW6FT123=GS1.1.1705873982.1.1.1705875341.60.0.0' \
+  -H 'pragma: no-cache' \
+  -H 'referer: https://hk.jobsdb.com/jobs-in-information-communication-technology?page=2&sortmode=ListedDate&subclassification=6303%2C6302%2C6301%2C6300%2C6299%2C6297%2C6298%2C6296%2C6295%2C6294%2C6293%2C6292%2C6290%2C6289%2C6288%2C6287%2C6286%2C6285%2C6283%2C6282%2C6284' \
+  -H 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Microsoft Edge";v="120"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'seek-request-brand: jobsdb' \
+  -H 'seek-request-country: HK' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0' \
+  -H 'x-seek-checksum: 12ddeb6a' \
+  -H 'x-seek-site: Chalice' \
+  --compressed
+
+
+no subclassification
+curl 'https://hk.jobsdb.com/api/chalice-search/v4/search?siteKey=HK-Main&sourcesystem=houston&userqueryid=132bf9afd02e341071614907b92d1843-5465178&userid=34fdb779-2485-45c6-a758-8b7019a4c413&usersessionid=34fdb779-2485-45c6-a758-8b7019a4c413&eventCaptureSessionId=34fdb779-2485-45c6-a758-8b7019a4c413&page=2&seekSelectAllPages=true&classification=6281&sortmode=ListedDate&pageSize=30&include=seodata&locale=en-HK&solId=b7ffa1b6-0cae-4749-9fff-b311300739d6' \
+  -H 'authority: hk.jobsdb.com' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: zh-TW,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \
+  -H 'cache-control: no-cache' \
+  -H 'cookie: JobseekerSessionId=34fdb779-2485-45c6-a758-8b7019a4c413; JobseekerVisitorId=34fdb779-2485-45c6-a758-8b7019a4c413; sol_id=b7ffa1b6-0cae-4749-9fff-b311300739d6; da_cdt=visid_018d2e033eef0096b25c73d97b980507d001607500bd0-sesid_1705873981167; da_sa_candi_sid=1705873981167; _hjSessionUser_337118=eyJpZCI6Ijc4YTMxMzI4LTdkY2EtNWJhMy1hYmRkLTE2M2U0MGRhMDM1OSIsImNyZWF0ZWQiOjE3MDU4NzM5ODIyNzIsImV4aXN0aW5nIjpmYWxzZX0=; _hjIncludedInSessionSample_337118=0; _hjSession_337118=eyJpZCI6ImQ0MjdlM2MxLTBmMzgtNGVkNC1hYTI3LTZkZTQ5NWQxNThmMyIsImMiOjE3MDU4NzM5ODIyNzMsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MH0=; _hjHasCachedUserAttributes=true; _gcl_au=1.1.1566695071.1705873982; ajs_anonymous_id=cdd71c57afa5e2b81f0b19763105da6d; _ga=GA1.2.746399337.1705873982; _gid=GA1.2.1134719965.1705873998; sol_id=b7ffa1b6-0cae-4749-9fff-b311300739d6; da_searchTerm=undefined; __cf_bm=oIMbSLRPujFHUKZuFtqUhOXx9G.1xdoiSdbQ.Ln8ETM-1705874978-1-ARDttL16gPrs4b6rvMxFRe87E5zoWXticRtZyztpBuRyKPkZKrS/GxkPYCXWKAn0jhOYMZYutJDWQuBacvo6tps=; main=V%7C2~P%7Cjobsearch~I%7C6281~O%7C6303%2C6302%2C6301%2C6300%2C6299%2C6297%2C6298%2C6296%2C6295%2C6294%2C6293%2C6292%2C6290%2C6289%2C6288%2C6287%2C6286%2C6285%2C6283%2C6282%2C6284~SORT%7CListedDate~N%7C2~OSF%7Cquick&set=1705875342151/V%7C2~P%7Cjobsearch~I%7C6281%2C6163~SORT%7CListedDate~N%7C3~OSF%7Cquick&set=1705875123134/V%7C2~P%7Cjobsearch~I%7C6281%2C1209~SORT%7CListedDate~N%7C3~OSF%7Cquick&set=1705875101366; _dd_s=rum=0&expire=1705876364545; utag_main=v_id:018d2e033eef0096b25c73d97b980507d001607500bd0$_sn:1$_se:70$_ss:0$_st:1705877264588$ses_id:1705873981167%3Bexp-session$_pn:2%3Bexp-session$dc_visit:1$dc_event:69%3Bexp-session$dc_region:ap-east-1%3Bexp-session; _ga_CDEW6FT123=GS1.1.1705873982.1.1.1705875464.60.0.0' \
+  -H 'pragma: no-cache' \
+  -H 'referer: https://hk.jobsdb.com/jobs-in-information-communication-technology?page=2&sortmode=ListedDate' \
+  -H 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Microsoft Edge";v="120"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'seek-request-brand: jobsdb' \
+  -H 'seek-request-country: HK' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0' \
+  -H 'x-seek-checksum: 12a3d004' \
+  -H 'x-seek-site: Chalice' \
+  --compressed
