@@ -1,13 +1,13 @@
 {
   "version": "2.0",
+
+  // for windows timezone, powershell> tzutil.exe /L
+  "WEBSITE_TIME_ZONE": "China Standard Time",
+
+  // for linux timezone, https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  //"WEBSITE_TIME_ZONE": "Asia/Hong_Kong",
+
   "logging": {
-
-    // for windows timezone, powershell> tzutil.exe /L
-    "WEBSITE_TIME_ZONE": "China Standard Time",
-
-    // for linux timezone, https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-    //"WEBSITE_TIME_ZONE": "Asia/Hong_Kong",
-
     "logLevel": { "default": "Information" },
     "applicationInsights": {
       "samplingSettings": {
