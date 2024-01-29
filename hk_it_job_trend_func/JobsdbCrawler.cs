@@ -1,3 +1,5 @@
+using Azure;
+
 using GraphQL;
 
 using hk_it_job_trend_func.Models;
@@ -29,16 +31,17 @@ namespace hk_it_job_trend_func
         private const string DEFAULT_VISITOR_GUID = "effc67eb-b913-418f-9914-ebf1bfbb3809";
         private const string listingDateFieldName = "listingDate";
         private string cosmosConnStr { get { return _config.GetValue<string>(CosmosConfig.CONN_NAME); } }
-
+        private ILogger _logger;
         public JobsdbCrawler(IConfiguration config)
         {
             _config = config;
         }
 
         [FunctionName(nameof(JobsdbCrawler))]
-        [FixedDelayRetry(0,"00:00:00")]
+        [FixedDelayRetry(0, "00:00:00")]
         public async Task Run([TimerTrigger("0 0 17 * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
         {
+            _logger = log;
             //log.LogInformation($"function started at: {DateTime.Now}");
 
             // get cosmosdb container
@@ -56,7 +59,17 @@ namespace hk_it_job_trend_func
             for (int page = 1; page <= maxQueryPage; page++)
             {
                 log.LogInformation($"start query page {page}");
-                var pageJson = await GetJobsPageJson(page);
+                JsonObject pageJson;
+                try
+                {
+                    pageJson = await GetJobsPageJson(page);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, $"Get Jobs Page Error, page: {page}");
+                    throw;
+                }
+
                 var jobJsonArray = pageJson["data"].AsArray();
 
                 //stop at this page if any job reach last posted date
@@ -87,9 +100,17 @@ namespace hk_it_job_trend_func
             foreach (var job in jobList)
             {
                 var upsertJob = JObject.Parse(job.ToJsonString());
+                log.LogInformation($"[job id: {upsertJob.Value<string>("id")}] start upsert");
 
-                //log.LogInformation($"[job id: {upsertJob.Value<string>("id")}] start upsert");
-                await jobsdbContainer.UpsertItemAsync(upsertJob);
+                try
+                {
+                    await jobsdbContainer.UpsertItemAsync(upsertJob);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, $"Save job to cosmosdb error, {upsertJob}");
+                    throw;
+                }
             }
 
             log.LogInformation($"function finised at: {DateTime.Now}");
