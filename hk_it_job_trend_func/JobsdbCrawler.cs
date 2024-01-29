@@ -1,7 +1,3 @@
-using Azure;
-
-using GraphQL;
-
 using hk_it_job_trend_func.Models;
 
 using Microsoft.AspNetCore.WebUtilities;
