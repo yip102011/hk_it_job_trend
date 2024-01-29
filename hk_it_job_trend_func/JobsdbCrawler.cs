@@ -1,9 +1,8 @@
 using GraphQL;
-using GraphQL.Client.Http;
-using GraphQL.Client.Serializer.SystemTextJson;
 
 using hk_it_job_trend_func.Models;
 
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Configuration;
@@ -14,7 +13,9 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json;
+using System.Net.Http;
+using System.Net.Http.Json;
+
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
@@ -26,7 +27,8 @@ namespace hk_it_job_trend_func
 
         // only used when config "VISITOR_GUID" not set
         private const string DEFAULT_VISITOR_GUID = "effc67eb-b913-418f-9914-ebf1bfbb3809";
-        private const string postedAt = "postedAt";
+        private const string listingDateFieldName = "listingDate";
+        private string cosmosConnStr { get { return _config.GetValue<string>(CosmosConfig.CONN_NAME); } }
 
         public JobsdbCrawler(IConfiguration config)
         {
@@ -34,49 +36,39 @@ namespace hk_it_job_trend_func
         }
 
         [FunctionName(nameof(JobsdbCrawler))]
-        public async Task Run([TimerTrigger("0 0 17 * * *", RunOnStartup = false)] TimerInfo myTimer, ILogger log)
+        public async Task Run([TimerTrigger("0 0 17 * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
         {
             //log.LogInformation($"function started at: {DateTime.Now}");
 
             // get cosmosdb container
             log.LogInformation("get cosmosdb container");
-            var cosmosConnStr = _config.GetValue<string>(CosmosConfig.CONN_NAME);
-            Container jobsdb_container = await GetCosmosContainer(cosmosConnStr, CosmosConfig.DB_NAME, CosmosConfig.JOBSDB_CON_JOBSDB, CosmosConfig.JOBSDB_KEY_JOBSDB);
+            Container jobsdbContainer = await GetCosmosContainer(cosmosConnStr, CosmosConfig.DB_NAME, CosmosConfig.JOBSDB_CON_JOBSDB, CosmosConfig.JOBSDB_KEY_JOBSDB);
 
             //defind a last date, stop query when job posted date before last date.
-            var last_posted_at = await GetLastPostedAt(jobsdb_container, defaultValue: DateTime.Today);
-            log.LogInformation($"last_posted_at: {last_posted_at.ToString("yyyy-MM-dd HH:mm:ss")}");
+            var lastListingDate = await GetLastListingDate(jobsdbContainer, defaultValue: DateTime.Today);
+            log.LogInformation($"lastListingDate: {lastListingDate.ToString("yyyy-MM-dd HH:mm:ss")}");
 
             // send query to get job
             var jobList = new List<JsonObject>();
-            using var graphQLClient = new GraphQLHttpClient("https://xapi.supercharge-srp.co/job-search/graphql?country=hk&isSmartSearch=true", new SystemTextJsonSerializer());
-            int max_query_page = 100;
+            int maxQueryPage = 1;
             var visitorGuid = _config.GetValue("VISITOR_GUID", DEFAULT_VISITOR_GUID);
-            for (int page = 1; page < max_query_page; page++)
+            for (int page = 1; page <= maxQueryPage; page++)
             {
                 log.LogInformation($"start query page {page}");
-                GraphQLRequest request = createGraphQLRequest(page, visitorGuid);
-                var qlResponse = await graphQLClient.SendQueryAsync<JsonObject>(request);
-                var jobsObj = qlResponse.Data["jobs"];
-
-                //var total = jobsObj["total"];
-                //var pageSize = jobsObj["solMetadata"]?["pageSize"];
-                //var pageNumber = jobsObj["solMetadata"]?["pageNumber"];
-                //var totalJobCount = jobsObj["solMetadata"]?["totalJobCount"];
-
-                var jobJsonArray = jobsObj["jobs"].AsArray();
-                var pagedJobList = jobJsonArray.Select(j => j.Deserialize<JsonObject>());
-                jobList.AddRange(pagedJobList);
+                var pageJson = await GetJobsPageJson(page);
+                var jobJsonArray = pageJson["data"].AsArray();
 
                 //stop at this page if any job reach last posted date
-                if (pagedJobList.Any(j =>
-                {
-                    return j[postedAt].AsValue().Deserialize<DateTime>() <= last_posted_at;
-                }))
+                var maxListedAt = jobJsonArray.Max(job => job[listingDateFieldName].GetValue<DateTime>());
+                if (maxListedAt <= lastListingDate)
                 {
                     log.LogInformation($"job list count: {jobList.Count}");
                     break;
                 }
+
+                // add paged list to list
+                var pagedJobList = jobJsonArray.Select(j => j.AsObject());
+                jobList.AddRange(pagedJobList);
 
                 // add some delay, incase jobsdb block me
                 await Task.Delay(Random.Shared.Next(100, 500));
@@ -84,16 +76,19 @@ namespace hk_it_job_trend_func
 
             log.LogInformation($"start upsert job list to cosmosdb, job count: {jobList.Count}");
 
-            // start from oldest job, job should order by postedAt because 
+            // start from oldest job, job should order by listingDateFieldName desc default
             jobList.Reverse();
+
+            // cosmosdb require id to be string
+            jobList.ForEach(job => { job["id"] = job["id"].GetValue<int>().ToString(); });
 
             // insert into cosmosdb one by one, incase error occur
             foreach (var job in jobList)
-            {                
+            {
                 var upsertJob = JObject.Parse(job.ToJsonString());
 
                 //log.LogInformation($"[job id: {upsertJob.Value<string>("id")}] start upsert");
-                await jobsdb_container.UpsertItemAsync(upsertJob);
+                await jobsdbContainer.UpsertItemAsync(upsertJob);
             }
 
             log.LogInformation($"function finised at: {DateTime.Now}");
@@ -107,178 +102,89 @@ namespace hk_it_job_trend_func
             return jobsdb_container;
         }
 
-        private async Task<DateTime> GetLastPostedAt(Container jobsdb_container, DateTime defaultValue)
+        private async Task<DateTime> GetLastListingDate(Container jobsdb_container, DateTime defaultValue)
         {
-            // default today 00:00
-            var maxPostedAt = defaultValue;
-
-            var query = new QueryDefinition($"SELECT MAX(j.{postedAt}) AS {postedAt} FROM jobsdb AS j");
+            var query = new QueryDefinition($"SELECT MAX(j.{listingDateFieldName}) AS {listingDateFieldName} FROM jobsdb AS j");
             using var feed = jobsdb_container.GetItemQueryIterator<JObject>(query);
-
-            if (feed.HasMoreResults)
+            if (feed.HasMoreResults == false)
             {
-                var response = await feed.ReadNextAsync();
-                var e = response.GetEnumerator();
-                if (e.MoveNext())
+                return defaultValue;
+            }
+
+            var response = await feed.ReadNextAsync();
+            DateTime maxListingDate = response.FirstOrDefault()?.Value<DateTime?>(listingDateFieldName) ?? defaultValue;
+            return maxListingDate;
+        }
+
+        private async Task<JsonObject> GetJobsPageJson(int page, string visitorGuid = DEFAULT_VISITOR_GUID)
+        {
+            string baseUrl = "https://hk.jobsdb.com/api/chalice-search/v4/search";
+            var queryParams = new Dictionary<string, string>();
+            queryParams["siteKey"] = "HK-Main";
+            queryParams["sourcesystem"] = "houston";
+            //queryParams["userqueryid"] = "132bf9afd02e341071614907b92d1843-5465178";
+            //queryParams["userid"] = "34fdb779-2485-45c6-a758-8b7019a4c413";
+            //queryParams["usersessionid"] = "34fdb779-2485-45c6-a758-8b7019a4c413";
+            //queryParams["eventCaptureSessionId"] = "34fdb779-2485-45c6-a758-8b7019a4c413";
+            queryParams["page"] = page.ToString();
+            queryParams["seekSelectAllPages"] = "true";
+            queryParams["classification"] = "6281";
+            queryParams["sortmode"] = "ListedDate";
+            queryParams["pageSize"] = "30";
+            queryParams["include"] = "seodata";
+            queryParams["locale"] = "en-HK";
+            //queryParams["solId"] = "b7ffa1b6-0cae-4749-9fff-b311300739d6";
+
+            string url = baseUrl;
+            foreach (var (name, value) in queryParams) { url = QueryHelpers.AddQueryString(url, name, value); }
+
+            using HttpClient client = new HttpClient();
+            var response = await client.GetFromJsonAsync<JsonObject>(url);
+            return response;
+        }
+
+        [Obsolete("This function is not using currently")]
+        private async Task<string> GetVisitorId()
+        {
+            const string visitorIdDBFieldName = "visitor_id";
+            Container container = await GetCosmosContainer(cosmosConnStr, CosmosConfig.DB_NAME, CosmosConfig.JOBSDB_CON_JOBSDB_META, CosmosConfig.JOBSDB_KEY_JOBSDB_META);
+
+            //get vistior id from cosmosdb
+            var query = new QueryDefinition($"SELECT value FROM c WHERE c.key = '{visitorIdDBFieldName}'");
+            var feed = container.GetItemQueryIterator<JObject>(query);
+            if (feed.HasMoreResults == true)
+            {
+                var feedResponse = await feed.ReadNextAsync();
+                var vistiorIdFromDB = feedResponse.FirstOrDefault()?.Value<string>(visitorIdDBFieldName);
+                if (string.IsNullOrWhiteSpace(vistiorIdFromDB) == false)
                 {
-                    var d = e.Current.Value<DateTime>(postedAt);
-                    if (d > DateTime.MinValue)
-                    {
-                        maxPostedAt = d;
-                    }
+                    return vistiorIdFromDB;
                 }
             }
 
-            return maxPostedAt;
-        }
-
-        private static GraphQLRequest createGraphQLRequest(int page, string visitorGuid)
-        {
-            const int JOB_FUNCTION__INFORMATION_TECHNOLOGY = 131;
-            return new GraphQLRequest
+            // if vistior id is null of empty
+            // get vistior from cookie by access jobdb.com
+            var client = new HttpClient();
+            var httpRequest = new HttpRequestMessage();
+            httpRequest.RequestUri = new Uri("https://hk.jobsdb.com/");
+            httpRequest.Method = HttpMethod.Get;
+            var httpResponse = await client.SendAsync(httpRequest);
+            httpResponse.Headers.TryGetValues("Set-Cookie", out IEnumerable<string> values);
+            var vistiorId = values.Where(v => v.StartsWith("JobseekerVisitorId=")).FirstOrDefault()?.Replace("JobseekerVisitorId=", string.Empty);
+            if (string.IsNullOrWhiteSpace(vistiorId))
             {
-                Query = @"
-                            query getJobs($country: String, $locale: String, $keyword: String, $createdAt: String, $jobFunctions: [Int], $categories: [String], $locations: [Int], $careerLevels: [Int], $minSalary: Int, $maxSalary: Int, $salaryType: Int, $candidateSalary: Int, $candidateSalaryCurrency: String, $datePosted: Int, $jobTypes: [Int], $workTypes: [String], $industries: [Int], $page: Int, $pageSize: Int, $companyId: String, $advertiserId: String, $userAgent: String, $accNums: Int, $subAccount: Int, $minEdu: Int, $maxEdu: Int, $edus: [Int], $minExp: Int, $maxExp: Int, $seo: String, $searchFields: String, $candidateId: ID, $isDesktop: Boolean, $isCompanySearch: Boolean, $sort: String, $sVi: String, $duplicates: String, $flight: String, $solVisitorId: String) {
-                              jobs(
-                                country: $country
-                                locale: $locale
-                                keyword: $keyword
-                                createdAt: $createdAt
-                                jobFunctions: $jobFunctions
-                                categories: $categories
-                                locations: $locations
-                                careerLevels: $careerLevels
-                                minSalary: $minSalary
-                                maxSalary: $maxSalary
-                                salaryType: $salaryType
-                                candidateSalary: $candidateSalary
-                                candidateSalaryCurrency: $candidateSalaryCurrency
-                                datePosted: $datePosted
-                                jobTypes: $jobTypes
-                                workTypes: $workTypes
-                                industries: $industries
-                                page: $page
-                                pageSize: $pageSize
-                                companyId: $companyId
-                                advertiserId: $advertiserId
-                                userAgent: $userAgent
-                                accNums: $accNums
-                                subAccount: $subAccount
-                                minEdu: $minEdu
-                                edus: $edus
-                                maxEdu: $maxEdu
-                                minExp: $minExp
-                                maxExp: $maxExp
-                                seo: $seo
-                                searchFields: $searchFields
-                                candidateId: $candidateId
-                                isDesktop: $isDesktop
-                                isCompanySearch: $isCompanySearch
-                                sort: $sort
-                                sVi: $sVi
-                                duplicates: $duplicates
-                                flight: $flight
-                                solVisitorId: $solVisitorId
-                              ) {
-                                total
-                                totalJobs
-                                relatedSearchKeywords {
-                                  keywords
-                                  type
-                                  totalJobs
-                                }
-                                solMetadata
-                                suggestedEmployer {
-                                  name
-                                  totalJobs
-                                }
-                                queryParameters {
-                                  key
-                                  searchFields
-                                  pageSize
-                                }
-                                experiments {
-                                  flight
-                                }
-                                jobs {
-                                  id
-                                  adType
-                                  sourceCountryCode
-                                  isStandout
-                                  companyMeta {
-                                    id
-                                    advertiserId
-                                    isPrivate
-                                    name
-                                    logoUrl
-                                    slug
-                                  }
-                                  jobTitle
-                                  jobUrl
-                                  jobTitleSlug
-                                  description
-                                  employmentTypes {
-                                    code
-                                    name
-                                  }
-                                  sellingPoints
-                                  locations {
-                                    code
-                                    name
-                                    slug
-                                    children {
-                                      code
-                                      name
-                                      slug
-                                    }
-                                  }
-                                  categories {
-                                    code
-                                    name
-                                    children {
-                                      code
-                                      name
-                                    }
-                                  }
-                                  postingDuration
-                                  postedAt
-                                  salaryRange {
-                                    currency
-                                    max
-                                    min
-                                    period
-                                    term
-                                  }
-                                  salaryVisible
-                                  bannerUrl
-                                  isClassified
-                                  solMetadata
-                                }
-                              }
-                            }
-                ",
-                OperationName = "getJobs",
-                Variables = new
-                {
-                    keyword = "",
-                    jobFunctions = new int[] { JOB_FUNCTION__INFORMATION_TECHNOLOGY },
-                    locations = new string[] { },
-                    salaryType = 1,
-                    jobTypes = new string[] { },
-                    createdAt = "",
-                    careerLevels = new string[] { },
-                    page,
-                    sort = "createdAt",
-                    country = "hk",
-                    sVi = "",
-                    solVisitorId = visitorGuid,
-                    categories = new string[] { JOB_FUNCTION__INFORMATION_TECHNOLOGY.ToString() },
-                    workTypes = new string[] { },
-                    userAgent = "Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120.0.0.0%20Safari/537.36%20Edg/120.0.0.0",
-                    industries = new string[] { },
-                    locale = "en"
-                }
-            };
+                throw new Exception($"Get vistior id fail, cookie: {string.Join('|', values)}, status code: {httpResponse.StatusCode}, vistior id: {vistiorId}");
+            }
+
+            // store vistior id into cosmosdb 
+            var item = new { key = visitorIdDBFieldName, value = vistiorId };
+            var createResponse = await container.CreateItemAsync(item);
+            if (createResponse.StatusCode != System.Net.HttpStatusCode.OK)
+            {
+                throw new Exception($"Store vistior id to cosmosdb fail, container id: {container.Id}, status code: {createResponse.StatusCode}, vistior id: {vistiorId}, key: {visitorIdDBFieldName}");
+            }
+
+            return vistiorId;
         }
     }
 }
