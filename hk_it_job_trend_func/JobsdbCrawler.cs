@@ -36,6 +36,7 @@ namespace hk_it_job_trend_func
         }
 
         [FunctionName(nameof(JobsdbCrawler))]
+        [FixedDelayRetry(0,"00:00:00")]
         public async Task Run([TimerTrigger("0 0 17 * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
         {
             //log.LogInformation($"function started at: {DateTime.Now}");
